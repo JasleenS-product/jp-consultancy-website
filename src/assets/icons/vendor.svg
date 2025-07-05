@@ -1,0 +1,16 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Handshake -->
+  <path d="M16 24c0-2 1.5-4 4-4s4 2 4 4" stroke="#2563EB" stroke-width="2" fill="none"/>
+  <path d="M24 24c0-2 1.5-4 4-4s4 2 4 4" stroke="#2563EB" stroke-width="2" fill="none"/>
+  <path d="M20 20l-2-2M28 20l2-2" stroke="#2563EB" stroke-width="2"/>
+  <!-- Buildings/Companies -->
+  <rect x="8" y="28" width="6" height="12" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <rect x="10" y="30" width="2" height="2" fill="#2563EB"/>
+  <rect x="10" y="34" width="2" height="2" fill="#2563EB"/>
+  <rect x="34" y="28" width="6" height="12" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <rect x="36" y="30" width="2" height="2" fill="#2563EB"/>
+  <rect x="36" y="34" width="2" height="2" fill="#2563EB"/>
+  <!-- Evaluation checkmarks -->
+  <path d="M18 36l2 2 4-4" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <path d="M26 36l2 2 4-4" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+</svg> 

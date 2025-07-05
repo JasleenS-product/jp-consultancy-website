@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "src/assets/images"
+public_folder: "/assets/images"
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - label: "Homepage Content"
+        name: "home"
+        file: "src/index.md"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
+          - { label: "Hero Images", name: "hero_images", widget: "list", field: {label: "Image", name: "image", widget: "image"} }
+          - { label: "Statistics", name: "statistics", widget: "list", fields: [ {label: "Label", name: "label", widget: "string"}, {label: "Value", name: "value", widget: "string"} ] }
+          - { label: "About Section", name: "about", widget: "markdown" }
+          - { label: "Services", name: "services", widget: "list", fields: [ {label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "text"} ] }
+          - { label: "Approach", name: "approach", widget: "markdown" }
+          - { label: "Team", name: "team", widget: "list", fields: [ {label: "Name", name: "name", widget: "string"}, {label: "Position", name: "position", widget: "string"}, {label: "Experience", name: "experience", widget: "string"}, {label: "Image", name: "image", widget: "image", required: false} ] }
+          - { label: "Testimonials", name: "testimonials", widget: "list", fields: [ {label: "Quote", name: "quote", widget: "text"}, {label: "Author", name: "author", widget: "string"}, {label: "Position", name: "position", widget: "string", required: false} ] }
+          - { label: "Blogs", name: "blogs", widget: "list", fields: [ {label: "Title", name: "title", widget: "string"}, {label: "Image", name: "image", widget: "image"}, {label: "Excerpt", name: "excerpt", widget: "text"}, {label: "URL", name: "url", widget: "string"} ] }
+  - name: "about"
+    label: "About"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "src/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+  - name: "services"
+    label: "Services"
+    files:
+      - label: "Services Page"
+        name: "services"
+        file: "src/services.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+  - name: "projects"
+    label: "Projects"
+    files:
+      - label: "Projects Page"
+        name: "projects"
+        file: "src/projects.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+  - name: "blogs"
+    label: "Blogs"
+    files:
+      - label: "Blogs Page"
+        name: "blogs"
+        file: "src/blogs.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+  - name: "contact"
+    label: "Contact"
+    files:
+      - label: "Contact Page"
+        name: "contact"
+        file: "src/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" } 

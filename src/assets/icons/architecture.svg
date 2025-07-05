@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="architectureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1F5FFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A90E2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#architectureGradient)" opacity="0.1"/>
+  
+  <!-- Building Structure -->
+  <rect x="20" y="28" width="24" height="20" stroke="url(#architectureGradient)" stroke-width="2" fill="none"/>
+  
+  <!-- Roof -->
+  <path d="M18 28 L32 16 L46 28" stroke="url(#architectureGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Windows -->
+  <rect x="24" y="32" width="4" height="4" stroke="url(#architectureGradient)" stroke-width="1.5" fill="none"/>
+  <rect x="36" y="32" width="4" height="4" stroke="url(#architectureGradient)" stroke-width="1.5" fill="none"/>
+  <rect x="24" y="40" width="4" height="4" stroke="url(#architectureGradient)" stroke-width="1.5" fill="none"/>
+  <rect x="36" y="40" width="4" height="4" stroke="url(#architectureGradient)" stroke-width="1.5" fill="none"/>
+  
+  <!-- Door -->
+  <rect x="30" y="40" width="4" height="8" stroke="url(#architectureGradient)" stroke-width="1.5" fill="none"/>
+  
+  <!-- Blueprint/Grid Lines -->
+  <rect x="12" y="12" width="16" height="12" stroke="url(#architectureGradient)" stroke-width="1" fill="none" opacity="0.6"/>
+  <line x1="12" y1="18" x2="28" y2="18" stroke="url(#architectureGradient)" stroke-width="1" opacity="0.6"/>
+  <line x1="20" y1="12" x2="20" y2="24" stroke="url(#architectureGradient)" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Compass/Ruler -->
+  <circle cx="44" cy="16" r="6" stroke="url(#architectureGradient)" stroke-width="1.5" fill="none"/>
+  <line x1="44" y1="10" x2="44" y2="22" stroke="url(#architectureGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="38" y1="16" x2="50" y2="16" stroke="url(#architectureGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M44 10 L42 12 L46 12" stroke="url(#architectureGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Measurement Lines -->
+  <line x1="36" y1="8" x2="36" y2="12" stroke="url(#architectureGradient)" stroke-width="1" stroke-linecap="round"/>
+  <line x1="34" y1="10" x2="38" y2="10" stroke="url(#architectureGradient)" stroke-width="1" stroke-linecap="round"/>
+  <line x1="36" y1="20" x2="36" y2="24" stroke="url(#architectureGradient)" stroke-width="1" stroke-linecap="round"/>
+  <line x1="34" y1="22" x2="38" y2="22" stroke="url(#architectureGradient)" stroke-width="1" stroke-linecap="round"/>
+</svg> 

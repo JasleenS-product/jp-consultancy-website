@@ -1,0 +1,114 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<!-- Page Hero Section -->
+<section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ hero.background or "/assets/images/Hero.jpg" }}')">
+    <div class="container">
+        <div class="page-hero-content">
+            <h1>{{ hero.title }}</h1>
+            <p>{{ hero.subtitle }}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+{% if services %}
+<section class="services-page-section">
+    <div class="container">
+        <div class="services-grid-page">
+            {% for service in services %}
+            <div class="service-card-page" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="service-image">
+                    <img src="{{ service.image }}" alt="{{ service.title }}">
+                    <div class="service-overlay">
+                        <img src="/assets/icons/{{ service.icon }}.svg" alt="{{ service.title }}" class="service-icon">
+                    </div>
+                </div>
+                <div class="service-content-page">
+                    <h3>{{ service.title }}</h3>
+                    <p>{{ service.description }}</p>
+                    <ul class="service-features">
+                        {% for feature in service.features %}
+                        <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                    <a href="{{ service.link }}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Process Section -->
+{% if process %}
+<section class="process-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>{{ process.title }}</h2>
+            <p>{{ process.subtitle }}</p>
+        </div>
+        <div class="process-grid">
+            {% for step in process.steps %}
+            <div class="process-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="process-icon">
+                    <img src="/assets/icons/{{ step.icon }}.svg" alt="{{ step.title }}">
+                </div>
+                <div class="process-number">{{ step.number }}</div>
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Benefits Section -->
+{% if benefits %}
+<section class="benefits-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>{{ benefits.title }}</h2>
+            <p>{{ benefits.subtitle }}</p>
+        </div>
+        <div class="benefits-grid">
+            {% for item in benefits.items %}
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="benefit-icon">
+                    <img src="/assets/icons/{{ item.icon }}.svg" alt="{{ item.title }}">
+                </div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- CTA Section -->
+{% if cta %}
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+            <h2>{{ cta.title }}</h2>
+            <p>{{ cta.subtitle }}</p>
+            <a href="/contact" class="btn btn-primary">{{ cta.button }}</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Page Content -->
+{% if content %}
+<section class="page-content">
+    <div class="container">
+        <div class="content-wrapper">
+            {{ content | safe }}
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %} 

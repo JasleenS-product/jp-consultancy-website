@@ -1,0 +1,334 @@
+<!-- TEST MARKER 123456789 -->
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<!-- Hero Section with Carousel and Floating Stats -->
+<section class="hero-section">
+  <div class="hero-carousel">
+    <!-- Slide 1 -->
+    <div class="hero-slide active" style="background-image: url('/assets/images/Hero.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Investing in Health Systems of Tomorrow</h1>
+        <div class="hero-tagline">Your trusted partner in comprehensive healthcare transformation and professional excellence</div>
+        <div class="hero-buttons">
+          <a href="/service-details/hospital-planning" class="btn btn-primary">Discover More</a>
+          <a href="/projects" class="btn btn-outline">View Projects</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide" style="background-image: url('/assets/images/hero2.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Designing the Future of Healthcare</h1>
+        <div class="hero-tagline">We partner with healthcare leaders to build and equip world-class facility through strategic design and intelligent equipment planning.</div>
+        <div class="hero-buttons">
+          <a href="/service-details/equipment" class="btn btn-primary">Discover More</a>
+          <a href="/projects" class="btn btn-outline">View Projects</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide" style="background-image: url('/assets/images/hero3.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Visionary Design. Strategic Procurement.</h1>
+        <div class="hero-tagline">Transforming healthcare spaces with expert consultancy, facility design and medical equipment lifecycle management.</div>
+        <div class="hero-buttons">
+          <a href="/service-details/consultancy" class="btn btn-primary">Discover More</a>
+          <a href="/projects" class="btn btn-outline">View Projects</a>
+        </div>
+      </div>
+    </div>
+    <!-- Stats Overlay (always visible, below hero content) -->
+    <div class="hero-stats-overlay">
+      <div class="stat"><span class="stat-number">15+</span><span class="stat-label">Years in the Industry</span></div>
+      <div class="stat"><span class="stat-number">50+</span><span class="stat-label">Organizations Transformed</span></div>
+      <div class="stat"><span class="stat-number">100%</span><span class="stat-label">Client Satisfaction Rate</span></div>
+      <div class="stat"><span class="stat-number">Quality</span><span class="stat-label">Excellence delivered in every project</span></div>
+    </div>
+  </div>
+  <div class="carousel-indicators">
+    <span class="indicator active"></span>
+    <span class="indicator"></span>
+    <span class="indicator"></span>
+  </div>
+</section>
+
+<!-- Visual Divider/Background Play After Services -->
+<div class="section-divider">
+  <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="divider-svg">
+    <defs>
+      <linearGradient id="heroCurveGradient" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#1F5FFF" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#0F4CDB" stop-opacity="0.7"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z" fill="url(#heroCurveGradient)"/>
+  </svg>
+</div>
+
+<!-- Modern Services Section -->
+<section id="services" class="services-modern-section">
+  <div class="services-bg-blur"></div>
+  <div class="container">
+    <div class="services-header">
+      <h2>{{ services_hero.title }}</h2>
+      <p>{{ services_hero.subtitle }}</p>
+    </div>
+    <div class="services-modern-grid">
+      {% for service in services %}
+      <div class="service-modern-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+        <div class="service-modern-icon">
+          {% if service.title == 'Quality and Accreditation' %}
+          <!-- Shield with checkmark for Quality and Accreditation -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4L6 8v8c0 8 10 12 10 12s10-4 10-12V8z"/>
+            <path d="M12 16l4 4 6-6"/>
+            <circle cx="16" cy="16" r="2" fill="#fff"/>
+          </svg>
+          {% elif service.title == 'Hospital Planning & Design' %}
+          <!-- Building with blueprint for Hospital Planning & Design -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="12" width="16" height="12" rx="2"/>
+            <rect x="12" y="8" width="8" height="4" rx="1"/>
+            <line x1="12" y1="16" x2="16" y2="16"/>
+            <line x1="12" y1="18" x2="16" y2="18"/>
+            <path d="M20 14l4-4M24 10l-4 4"/>
+          </svg>
+          {% elif service.title == 'Hospital Equipment Planning' %}
+          <!-- Medical machine/equipment icon for Hospital Equipment Planning -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="10" width="20" height="12" rx="2"/>
+            <rect x="10" y="14" width="4" height="4" rx="1"/>
+            <rect x="18" y="14" width="4" height="4" rx="1"/>
+            <line x1="16" y1="10" x2="16" y2="22"/>
+            <circle cx="16" cy="24" r="2"/>
+          </svg>
+          {% elif service.title == 'Hospital Operations' %}
+          <!-- Gears and chart for Hospital Operations -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="16" r="8"/>
+            <circle cx="16" cy="16" r="3"/>
+            <path d="M16 8v2M16 22v2M24 16h-2M10 16H8"/>
+            <path d="M22 10l-1.5 1.5M11.5 20.5L10 22M22 22l-1.5-1.5M11.5 11.5L10 10"/>
+          </svg>
+          {% elif service.title == 'Medical Tourism' %}
+          <!-- Globe with plane for Medical Tourism -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="16" r="12"/>
+            <path d="M4 16h24M16 4c4 4 4 8 0 12s-4 8 0 12"/>
+            <path d="M8 12l8-4v8l-8 4z"/>
+          </svg>
+          {% elif service.title == 'Health Training' %}
+          <!-- Graduation cap for Health Training -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8l12 8-12 8-12-8z"/>
+            <path d="M4 16v4a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4v-4"/>
+            <rect x="8" y="20" width="16" height="2" rx="1"/>
+            <line x1="12" y1="22" x2="20" y2="22"/>
+          </svg>
+          {% else %}
+          <!-- Default icon -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="16" r="14"/>
+            <path d="M16 8v16M8 16h16"/>
+          </svg>
+          {% endif %}
+        </div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <a href="{{ service.link }}" class="service-modern-btn">Learn More &rarr;</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- SVG Icon Definitions (Phosphor Icons) -->
+  <svg style="display:none;">
+    <symbol id="ph-shield-check" viewBox="0 0 256 256"><path d="M128 24L40 56v58c0 80 80 118 80 118s80-38 80-118V56z"/><polyline points="104 128 128 152 176 104"/></symbol>
+    <symbol id="ph-buildings" viewBox="0 0 256 256"><rect x="40" y="96" width="176" height="120" rx="8"/><rect x="88" y="56" width="80" height="40" rx="8"/><rect x="120" y="16" width="16" height="40" rx="8"/></symbol>
+    <symbol id="ph-briefcase" viewBox="0 0 256 256"><rect x="32" y="72" width="192" height="144" rx="8"/><rect x="32" y="72" width="192" height="32" rx="8"/><path d="M80 72V56a8 8 0 0 1 8-8h80a8 8 0 0 1 8 8v16"/></symbol>
+    <symbol id="ph-airplane-tilt" viewBox="0 0 256 256"><path d="M224 128L32 128M128 32L128 224"/><polyline points="96 96 128 128 160 96"/></symbol>
+    <symbol id="ph-graduation-cap" viewBox="0 0 256 256"><path d="M32 128L128 64l96 64-96 64z"/><path d="M32 128v48a16 16 0 0 0 16 16h160a16 16 0 0 0 16-16v-48"/></symbol>
+    <symbol id="ph-stethoscope" viewBox="0 0 256 256"><circle cx="68" cy="188" r="28"/><circle cx="188" cy="188" r="28"/><path d="M68 160V56a12 12 0 0 1 12-12h96a12 12 0 0 1 12 12v104"/></symbol>
+  </svg>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Why Choose Us</h2>
+      <p>Discover what sets JP Consultancy apart in the healthcare consulting industry.</p>
+    </div>
+    <div class="why-choose-grid">
+      <div class="why-choose-card" data-aos="fade-up">
+        <div class="why-choose-icon">
+          <svg width="48" height="48" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="20"/><polyline points="16 24 22 30 32 18"/></svg>
+        </div>
+        <h3>Proven Results</h3>
+        <p>We deliver measurable improvements in efficiency, quality, and patient satisfaction.</p>
+      </div>
+      <div class="why-choose-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-choose-icon">
+          <svg width="48" height="48" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="12" width="24" height="24" rx="6"/><path d="M24 18v12M18 24h12"/></svg>
+        </div>
+        <h3>Client-Centric Approach</h3>
+        <p>Our solutions are tailored to your unique needs and organizational goals.</p>
+      </div>
+      <div class="why-choose-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-choose-icon">
+          <svg width="48" height="48" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v40M4 24h40"/></svg>
+        </div>
+        <h3>Decades of Experience</h3>
+        <p>Our team brings decades of combined experience in healthcare consulting.</p>
+      </div>
+      <div class="why-choose-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="why-choose-icon">
+          <svg width="48" height="48" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="32" height="32" rx="8"/><path d="M16 24l8 8 8-8"/></svg>
+        </div>
+        <h3>End-to-End Solutions</h3>
+        <p>From planning to implementation, we support you at every stage of your journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modern Projects Section with Dynamic Data -->
+<section id="projects" class="projects-section-v2">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>{{ projects_hero.title }}</h2>
+      <p>{{ projects_hero.subtitle }}</p>
+    </div>
+    <div class="projects-scroll-container">
+      <div class="projects-grid-v2">
+        {% for project in projects %}
+        <div class="project-card-v2" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+          <div class="project-image-wrapper-v2">
+              <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image-bg-v2">
+          </div>
+          <div class="project-content-v2">
+              <span class="project-catchy-v2">{{ project.category }}</span>
+              <h3>{{ project.title }}</h3>
+              <p class="project-location-v2">{{ project.location }}</p>
+              <p class="project-description-v2">{{ project.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="projects-cta-wrapper" data-aos="fade-up">
+      <a href="/projects" class="btn btn-primary">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- Approach Section with Image Right-Aligned -->
+<section class="approach-section">
+  <div class="container approach-flex">
+    <div class="approach-text">
+      <div class="section-header" data-aos="fade-up">
+        <h2>{{ approach.title }}</h2>
+        <p>{{ approach.subtitle }}</p>
+      </div>
+      <div class="approach-timeline">
+        {% for step in approach.steps %}
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+          <div class="timeline-number">{{ step.number }}</div>
+          <div class="timeline-content">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="approach-image" data-aos="fade-left">
+      <img src="/assets/images/Approach.jpg" alt="Our Approach" />
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>{{ team.title }}</h2>
+      <p>{{ team.subtitle }}</p>
+    </div>
+    <div class="team-carousel-container">
+      <div class="team-carousel">
+        {% for member in team.members %}
+        <div class="team-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+          <div class="team-content">
+            <h3>{{ member.name }}</h3>
+            <p class="team-position">{{ member.position }}</p>
+            <p class="team-experience">{{ member.experience }}</p>
+            <p class="team-description">{{ member.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="team-nav-arrows">
+        <button class="team-nav-arrow prev" onclick="scrollTeamCarousel('left')">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="team-nav-arrow next" onclick="scrollTeamCarousel('right')">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section Curve SVG -->
+<svg class="team-curve-svg" viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="teamCurveGradient" x1="0" y1="0" x2="0" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1F5FFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0F4CDB" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,0 C480,70 960,0 1440,70 L1440,70 L0,70 Z" fill="url(#teamCurveGradient)"/>
+</svg>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>{{ testimonials.title }}</h2>
+      <p>{{ testimonials.subtitle }}</p>
+    </div>
+    <div class="testimonials-carousel">
+      {% for testimonial in testimonials.items %}
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+        <div class="testimonial-quote">
+          <p>"{{ testimonial.quote }}"</p>
+        </div>
+        <div class="testimonial-author">
+          <h4>{{ testimonial.author }}</h4>
+          <p>{{ testimonial.position }}</p>
+          <p class="organization">{{ testimonial.organization }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Bold Final Banner Section -->
+<section class="final-banner">
+  <div class="final-banner-content">
+    <h2>Ready to Transform Your Healthcare Facility?</h2>
+    <div class="final-banner-underline"></div>
+    <p>Let's discuss how we can help you achieve excellence in healthcare delivery.</p>
+    <a href="/contact" class="btn btn-accent btn-lg">Get Started Today</a>
+  </div>
+</section>
+{% endblock %} 

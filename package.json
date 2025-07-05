@@ -1,0 +1,16 @@
+{
+  "name": "jpconsultancy-website",
+  "version": "1.0.0",
+  "description": "JP Consultancy static website built with Eleventy and Netlify CMS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx eleventy && npx browser-sync start --server '_site' --files '_site' --port 8080",
+    "build": "npx eleventy"
+  },
+  "keywords": [],
+  "author": "JP Consultancy",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+} 

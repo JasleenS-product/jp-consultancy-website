@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JP Consultancy - Healthcare Design &amp; Equipment Strategists</title>
+    <meta name="description" content="Your trusted partner in hospital design, planning, and equipment management for unparalleled operational efficiency.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/JP CONSULTANCY SVG.svg">
+    
+    <!-- CSS with cache-busting query string -->
+    <link rel="stylesheet" href="/assets/css/main.css?v=1.0.3">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Contact Ribbon -->
+    <div class="contact-ribbon">
+      <div class="container contact-ribbon-inner">
+        <span><strong>Phone:</strong> <a href="tel:+919819655543">+91 98196 55543</a></span>
+        <span class="ribbon-sep">|</span>
+        <span><strong>Email:</strong> <a href="mailto:jpconsultancy@gmail.com">jpconsultancy@gmail.com</a></span>
+      </div>
+    </div>
+    <!-- Navigation -->
+    <div class="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">
+                <img src="/assets/icons/JP CONSULTANCY SVG.svg" alt="JP Consultancy Logo" class="logo"/>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">Services</a>
+                    <div class="dropdown-content">
+                        <a href="/service-details/hospital-planning">Hospital Planning & Design</a>
+                        <a href="/service-details/equipment">Hospital Equipment Planning</a>
+                        <a href="/service-details/quality">Quality and Accreditation</a>
+                        <a href="/service-details/training">Health Training</a>
+                        <a href="/service-details/operations">Hospital Operations</a>
+                        <a href="/service-details/tourism">Medical Tourism</a>
+                    </div>
+                </div>
+                <a href="/projects" class="nav-link">Projects</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/assets/icons/JP CONSULTANCY SVG.svg" alt="JP Consultancy" class="footer-logo">
+                        <p>Your partners in organizational transformation journey. We don't provide expert solutions. We help you 
+                find them.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="/service-details/hospital-planning">Hospital Planning & Design</a></li>
+                        <li><a href="/service-details/equipment">Hospital Equipment Planning</a></li>
+                        <li><a href="/service-details/quality">Quality and Accreditation</a></li>
+                        <li><a href="/service-details/training">Health Training</a></li>
+                        <li><a href="/service-details/operations">Hospital Operations</a></li>
+                        <li><a href="/service-details/tourism">Medical Tourism</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><strong>Phone:</strong> +91 98196 55543</p>
+                        <p><strong>Email:</strong> jpconsultancy@gmail.com</p>
+                        <p><strong>Address:</strong> 1st Floor, Jayraj Bhuvan, New Mill Road, Kurla West, Mumbai – 400070</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> JP Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/script.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html> 

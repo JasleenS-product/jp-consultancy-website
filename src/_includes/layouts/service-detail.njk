@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/JP CONSULTANCY SVG.svg">
+    
+    <!-- CSS with cache-busting query string -->
+    <link rel="stylesheet" href="/assets/css/main.css?v=1.0.1">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Contact Ribbon -->
+    <div class="contact-ribbon">
+      <div class="container contact-ribbon-inner" style="justify-content: flex-start;">
+        <span><strong>Phone:</strong> <a href="tel:+919819655543">+91 98196 55543</a></span>
+        <span class="ribbon-sep">|</span>
+        <span><strong>Email:</strong> <a href="mailto:jpconsultancy@gmail.com">jpconsultancy@gmail.com</a></span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">
+                <img src="/assets/icons/JP CONSULTANCY SVG.svg" alt="JP Consultancy Logo" class="logo"/>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">Services</a>
+                    <div class="dropdown-content">
+                        <a href="/service-details/hospital-planning">Hospital Planning & Design</a>
+                        <a href="/service-details/equipment">Hospital Equipment Planning</a>
+                        <a href="/service-details/quality">Quality and Accreditation</a>
+                        <a href="/service-details/training">Health Training</a>
+                        <a href="/service-details/operations">Hospital Operations</a>
+                        <a href="/service-details/tourism">Medical Tourism</a>
+                    </div>
+                </div>
+                <a href="/projects" class="nav-link">Projects</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="service-detail">
+    <main>
+        
+        <!-- Page Hero Section -->
+        <section class="service-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ hero.background }}')">
+            <div class="container">
+                <div class="service-hero-content" data-aos="fade-up">
+                    <h1>{{ hero.title }}</h1>
+                    <p>{{ hero.subtitle }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Section -->
+        {% if why_choose %}
+        <section class="why-choose-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>{{ why_choose.title }}</h2>
+                    <p>Expert Solutions for Healthcare Excellence</p>
+                </div>
+                <div class="why-choose-grid custom-why-choose-grid">
+                    {% for point in why_choose.points %}
+                    <div class="why-choose-card custom-why-choose-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                        <div class="why-choose-icon custom-why-choose-icon">
+                            {% if point.icon == 'experience' %}
+                            <svg width="36" height="36" fill="none" stroke="#1F5FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="16"/><path d="M12 24l6-6 6 6"/></svg>
+                            {% elif point.icon == 'cohort' %}
+                            <svg width="36" height="36" fill="none" stroke="#1F5FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="16"/><path d="M18 12v12"/><path d="M12 18h12"/></svg>
+                            {% elif point.icon == 'unbiased' %}
+                            <svg width="36" height="36" fill="none" stroke="#1F5FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="24" height="24" rx="8"/><path d="M12 18h12"/></svg>
+                            {% elif point.icon == 'business-models' %}
+                            <svg width="36" height="36" fill="none" stroke="#1F5FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="20" height="20" rx="6"/><path d="M18 14v8"/><path d="M14 18h8"/></svg>
+                            {% else %}
+                            <svg width="36" height="36" fill="none" stroke="#1F5FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="16"/><path d="M18 10v16M10 18h16"/></svg>
+                            {% endif %}
+                        </div>
+                        <h3>{{ point.title }}</h3>
+                        <p>{{ point.description }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Core Services Section -->
+        {% if core_services %}
+        <section class="core-services-section" {% if core_services.background %}style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('{{ core_services.background }}')"{% endif %}>
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>{{ core_services.title }}</h2>
+                    <p>Comprehensive Healthcare Solutions</p>
+                </div>
+                
+                <!-- Core Services Matrix Grid -->
+                {% if core_services.matrix_layout %}
+                <div class="core-services-matrix">
+                    {% for service in core_services.services %}
+                    <div class="matrix-item matrix-{{ service.type }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                        {% if service.type == "text" %}
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <img src="/assets/icons/{{ service.icon }}.svg" alt="{{ service.title }}" onerror="this.style.display='none'">
+                            </div>
+                            <h3>{{ service.title }}</h3>
+                            <p>{{ service.description }}</p>
+                        </div>
+                        {% elif service.type == "image" %}
+                        <div class="service-image">
+                            <img src="{{ service.image }}" alt="{{ service.alt }}" loading="lazy">
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <!-- Fallback to original grid -->
+                <div class="core-services-grid">
+                    {% for service in core_services.services %}
+                    <div class="core-service-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                        <div class="service-icon">
+                            <img src="/assets/icons/{{ service.icon }}.svg" alt="{{ service.title }}" onerror="this.style.display='none'">
+                        </div>
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.description }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Approach Section -->
+        {% if approach %}
+        <section class="approach-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>{{ approach.title }}</h2>
+                    <p>{{ approach.content }}</p>
+                </div>
+                <div class="approach-methodology-text" style="text-align:left; margin-bottom: 2rem;">
+                    Our planning methodology is rooted in industry best practices and tailored to the unique needs of each client. This ensures smooth patient movement, improved infection control, and reduced operational inefficiencies.
+                </div>
+                {% if approach.timeline %}
+                <div class="approach-timeline-animated">
+                    {% for step in approach.steps %}
+                    <div class="timeline-step-animated" data-aos="fade-up" data-aos-delay="{{ loop.index * 150 }}">
+                        <div class="timeline-line"></div>
+                        <div class="step-content-animated">
+                            <div class="step-number-animated">{{ step.number }}</div>
+                            <div class="step-icon-animated">
+                                <img src="/assets/icons/{{ step.icon }}.svg" alt="{{ step.title }}" onerror="this.style.display='none'">
+                            </div>
+                            <div class="step-details">
+                                <h3>{{ step.title }}</h3>
+                                <p>{{ step.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="approach-timeline">
+                    {% for step in approach.steps %}
+                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                        <div class="timeline-connector"></div>
+                        <div class="step-number">{{ step.number }}</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <img src="/assets/icons/{{ step.icon }}.svg" alt="{{ step.title }}" onerror="this.style.display='none'">
+                            </div>
+                            <h3>{{ step.title }}</h3>
+                            <p>{{ step.description }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Deliverables Section -->
+        {% if deliverables %}
+        <section class="deliverables-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>{{ deliverables.title }}</h2>
+                    <p>Complete Project Deliverables</p>
+                </div>
+                <div class="deliverables-scroll">
+                    {% for item in deliverables.items %}
+                    <div class="deliverable-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                        <div class="deliverable-icon">
+                            <img src="/assets/icons/{{ item.icon }}.svg" alt="{{ item.title }}" onerror="this.style.display='none'">
+                        </div>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Methodology Statement (remove blue bubble) -->
+        {% if methodology %}
+        <section class="methodology-section">
+            <div class="container">
+                <p class="methodology-text">{{ methodology }}</p>
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- CTA Section -->
+        {% if cta %}
+        <section class="service-cta-section">
+            <div class="container">
+                <div class="cta-content" data-aos="fade-up">
+                    <div class="cta-background">
+                        <div class="cta-overlay"></div>
+                    </div>
+                    <div class="cta-text">
+                        <h2>{{ cta.title }}</h2>
+                        <p>{{ cta.subtitle }}</p>
+                        <div class="cta-buttons">
+                            {% for button in cta.buttons %}
+                            <a href="{{ button.link }}" class="btn btn-{{ button.style }}">{{ button.text }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+    </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/assets/icons/JP CONSULTANCY SVG.svg" alt="JP Consultancy" class="footer-logo">
+                        <p>Your partners in organizational transformation journey. We don't provide expert solutions. We help you find them.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="/service-details/hospital-planning">Hospital Planning & Design</a></li>
+                        <li><a href="/service-details/equipment">Hospital Equipment Planning</a></li>
+                        <li><a href="/service-details/quality">Quality and Accreditation</a></li>
+                        <li><a href="/service-details/training">Health Training</a></li>
+                        <li><a href="/service-details/operations">Hospital Operations</a></li>
+                        <li><a href="/service-details/tourism">Medical Tourism</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <p><strong>Phone:</strong> <a href="tel:+919819655543">+91 98196 55543</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:jpconsultancy@gmail.com">jpconsultancy@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 JP Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html> 
