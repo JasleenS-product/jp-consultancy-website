@@ -1,10 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M9 11H3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z"/>
-  <path d="M21 11h-6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z"/>
-  <path d="M9 3H3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/>
-  <path d="M21 3h-6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/>
-  <circle cx="6" cy="6" r="1"/>
-  <circle cx="18" cy="6" r="1"/>
-  <circle cx="6" cy="18" r="1"/>
-  <circle cx="18" cy="18" r="1"/>
+  <!-- Strategic Planning Icon - Compass with Target -->
+  <!-- Outer Circle -->
+  <circle cx="12" cy="12" r="10" stroke="#1F5FFF" stroke-width="2" fill="none"/>
+  
+  <!-- Inner Target Circle -->
+  <circle cx="12" cy="12" r="6" stroke="#1F5FFF" stroke-width="1.5" fill="none"/>
+  <circle cx="12" cy="12" r="3" stroke="#1F5FFF" stroke-width="1.5" fill="none"/>
+  
+  <!-- Compass Needle -->
+  <line x1="12" y1="2" x2="12" y2="22" stroke="#1F5FFF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2" y1="12" x2="22" y2="12" stroke="#1F5FFF" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Direction Indicators -->
+  <path d="M12 2 L10 6 L14 6 Z" fill="#1F5FFF"/>
+  <path d="M12 22 L10 18 L14 18 Z" fill="#1F5FFF"/>
+  <path d="M2 12 L6 10 L6 14 Z" fill="#1F5FFF"/>
+  <path d="M22 12 L18 10 L18 14 Z" fill="#1F5FFF"/>
+  
+  <!-- Center Dot -->
+  <circle cx="12" cy="12" r="1" fill="#1F5FFF"/>
 </svg> 

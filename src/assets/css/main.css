@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 /* Reset and Base Styles */
 * {
@@ -28,7 +29,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-white);
@@ -44,24 +45,36 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    letter-spacing: -0.025em;
+    font-family: 'Belleza', serif;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.01em;
 }
 
-h1 { font-size: 2.5rem; font-weight: 800; }
-h2 { font-size: 2rem; font-weight: 700; }
-h3 { font-size: 1.5rem; font-weight: 600; }
-h4 { font-size: 1.25rem; font-weight: 600; }
-h5 { font-size: 1.1rem; font-weight: 500; }
-h6 { font-size: 1rem; font-weight: 500; }
+h1 { font-size: 3.2rem; font-weight: 700; }
+h2 { font-size: 2.6rem; font-weight: 600; }
+h3 { font-size: 2rem; font-weight: 600; }
+h4 { font-size: 1.6rem; font-weight: 600; }
+h5 { font-size: 1.3rem; font-weight: 500; }
+h6 { font-size: 1.1rem; font-weight: 500; }
 
 p {
     margin-bottom: 1rem;
     color: var(--text-light);
     font-weight: 400;
     line-height: 1.7;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* Apply IBM Plex Sans to all body text elements */
+body, p, li, span, div, a, input, textarea, select, label {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* Use Belleza for headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Belleza', serif;
 }
 
 /* Buttons */
@@ -76,6 +89,7 @@ p {
     cursor: pointer;
     font-size: 1rem;
     letter-spacing: 0.025em;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .btn-primary {
@@ -177,13 +191,17 @@ p {
 .nav-link {
     color: var(--text-dark);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans', sans-serif;
     transition: var(--transition);
     position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
 }
 
 .nav-link:hover {
     color: var(--primary-color);
+    background-color: rgba(31, 95, 255, 0.1);
 }
 
 .nav-link::after {
@@ -314,11 +332,11 @@ p {
 /* HERO TITLE: Pure white, strong shadow, responsive size */
 .hero-title {
     color: #fff !important;
-    font-size: 3.2rem;
-    font-weight: 800;
+    font-size: 4rem;
+    font-weight: 700;
     margin-bottom: 1.2rem;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     text-shadow: 2px 2px 16px rgba(0,0,0,0.95), 0 1px 2px rgba(0,0,0,0.7) !important;
     text-align: center;
 }
@@ -352,6 +370,7 @@ p {
     flex-wrap: wrap;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    margin-bottom: 8rem !important; /* Add more space to prevent overlap with ribbon */
 }
 .hero-buttons .btn, .hero-buttons a.btn {
     background: #1F5FFF !important;
@@ -378,7 +397,7 @@ p {
 
 /* Responsive adjustments for hero */
 @media (max-width: 900px) {
-  .hero-title { font-size: 2.2rem; }
+  .hero-title { font-size: 2.8rem; }
   .hero-content { padding-top: 2.5rem !important; margin-bottom: 2.5rem !important; }
   .hero-section { min-height: 540px; }
   .hero-tagline {
@@ -390,7 +409,7 @@ p {
   .hero-slide { min-height: 500px; }
 }
 @media (max-width: 600px) {
-  .hero-title { font-size: 1.5rem; }
+  .hero-title { font-size: 2rem; }
   .hero-tagline { font-size: 1rem !important; }
   .hero-content { padding-top: 1.2rem !important; margin-bottom: 1.2rem !important; }
   .hero-buttons .btn, .hero-buttons a.btn { font-size: 1rem !important; padding: 0.7rem 1.2rem !important; }
@@ -787,6 +806,7 @@ p {
     color: var(--text-light);
     line-height: 1.5;
     font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Projects Section - Scrollable Carousel */
@@ -891,10 +911,11 @@ p {
     margin-top: 2rem;
 }
 
-/* Approach Section - Clean White Background */
+/* Approach Section - Background Image with Overlay */
 .approach-section {
     padding: 4rem 0 3rem 0;
-    background: var(--bg-white) !important;
+    background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
+                url('../images/Approach.jpg') center/cover no-repeat;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     position: relative;
@@ -910,11 +931,21 @@ p {
 
 .approach-text {
     order: 1;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .approach-image {
     order: 2;
     text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .approach-image img {
@@ -934,15 +965,18 @@ p {
     gap: 1.5rem;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: var(--bg-light);
+    background: rgba(255, 255, 255, 0.98);
     border-radius: var(--border-radius);
     border-left: 4px solid var(--primary-color);
     transition: var(--transition);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .timeline-item:hover {
     transform: translateX(10px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.98);
 }
 
 .timeline-number {
@@ -1041,9 +1075,26 @@ p {
     color: var(--text-dark);
 }
 
-.team-section .section-header h2,
-.team-section .section-header p {
+.team-section .section-header h2 {
+    font-family: 'Belleza', serif;
+    font-size: 3.2rem;
+    font-weight: 600;
     color: var(--text-dark);
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    text-shadow: none;
+}
+
+.team-section .section-header p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-light);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: none;
 }
 
 /* Team Carousel with Navigation */
@@ -1060,6 +1111,7 @@ p {
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    align-items: stretch;
 }
 
 .team-carousel::-webkit-scrollbar {
@@ -1122,49 +1174,100 @@ p {
 
 .team-card {
     flex: 0 0 300px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: var(--bg-white);
     border-radius: var(--border-radius-lg);
-    padding: 2rem;
-    box-shadow: var(--shadow-lg);
-    transition: var(--transition);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-md);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
     text-align: center;
+    width: 100%;
+    max-width: 340px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: var(--transition);
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Removed decorative elements to match About page design */
+
+/* Team Card Image Styling */
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #e3edfa 0%, #f8faff 100%);
+    border: 3px solid #e3edfa;
+    box-shadow: 0 4px 12px rgba(31,95,255,0.1);
+    display: block;
+}
+
+.team-card img:not([src]), 
+.team-card img[src=""],
+.team-card img[src*="data:image/svg+xml"] {
+    background: linear-gradient(135deg, #1F5FFF 0%, #3B82F6 100%);
+    position: relative;
+}
+
+.team-card img:not([src])::after, 
+.team-card img[src=""]::after,
+.team-card img[src*="data:image/svg+xml"]::after {
+    content: '👤';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
 }
 
 .team-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-xl);
-    background: rgba(255, 255, 255, 1);
+}
+
+.team-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
 }
 
 .team-content h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--text-dark);
+    color: var(--primary-color);
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .team-position {
-    color: var(--primary-color);
-    font-weight: 600;
+    color: var(--text-light);
     font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
 }
 
 .team-experience {
     color: var(--text-light);
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .team-description {
     color: var(--text-light);
-    font-size: 0.9rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.95rem;
     line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* Testimonials Section */
@@ -1860,6 +1963,19 @@ p {
         gap: 1rem;
     }
     
+    .team-card {
+        min-height: 350px;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+    }
+    
+    .team-section .section-header h2 {
+        font-size: 2.4rem;
+    }
+    
+    .team-section .section-header p {
+        font-size: 1rem;
+    }
+    
     .testimonials-carousel {
         gap: 1rem;
     }
@@ -1972,7 +2088,7 @@ p {
 /* Service Detail Page Styles */
 .service-detail {
     /* Enhanced typography and spacing */
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
 }
@@ -2640,6 +2756,7 @@ p {
     width: 60px;
     height: 60px;
     object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(31%) sepia(95%) saturate(2878%) hue-rotate(217deg) brightness(104%) contrast(97%);
 }
 
 /* Deliverables Grid */
@@ -2672,6 +2789,7 @@ p {
     width: 60px;
     height: 60px;
     object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(31%) sepia(95%) saturate(2878%) hue-rotate(217deg) brightness(104%) contrast(97%);
 }
 
 /* Enhanced CTA Section */
@@ -3242,6 +3360,7 @@ p {
     width: 28px;
     height: 28px;
     filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    filter: brightness(0) saturate(100%) invert(31%) sepia(95%) saturate(2878%) hue-rotate(217deg) brightness(104%) contrast(97%);
 }
 
 .step-details h3 {
@@ -3396,6 +3515,7 @@ p {
     line-height: 1.8;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .about-section ul {
@@ -3445,6 +3565,7 @@ p {
     color: var(--text-light);
     line-height: 1.6;
     margin-bottom: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Contact Page Styles */
@@ -3956,6 +4077,7 @@ p {
   line-height: 1.6;
   margin-bottom: 0;
   flex-grow: 1;
+  font-family: 'Open Sans', sans-serif;
 }
 
 @media (max-width: 900px) {
@@ -4104,6 +4226,7 @@ p {
   font-size: 1.08rem;
   line-height: 1.7;
   margin-bottom: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 @media (max-width: 900px) {
   .project-horizontal-card {
@@ -4235,9 +4358,10 @@ p {
   font-weight: 700;
 }
 .philosophy-card p {
-  color: var(--text-light);
-  font-size: 0.97rem;
-  line-height: 1.5;
+    color: var(--text-light);
+    font-size: 0.97rem;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
 }
 @media (max-width: 900px) {
   .philosophy-cards-row {
@@ -4296,9 +4420,10 @@ p {
   font-weight: 700;
 }
 .foundation-card p {
-  color: var(--text-light);
-  font-size: 1.02rem;
-  line-height: 1.5;
+    color: var(--text-light);
+    font-size: 1.02rem;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
 }
 @media (max-width: 900px) {
   .foundation-cards-row {
