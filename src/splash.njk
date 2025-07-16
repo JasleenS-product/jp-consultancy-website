@@ -1,0 +1,79 @@
+---
+layout: null
+permalink: "/index.html"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future-Ready Hospital Operations | JP Consultancy</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      min-width: 100vw;
+      background: linear-gradient(135deg, #0a0f1c 0%, #1f2a44 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Sans', sans-serif;
+      transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1);
+      opacity: 1;
+    }
+    .splash-logo {
+      width: 400px;
+      height: auto;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0 0 24px #fff) drop-shadow(0 0 32px #1f5fff88);
+      animation: logoPop 1.2s cubic-bezier(0.4,0,0.2,1);
+      display: block;
+      object-fit: contain;
+    }
+    .splash-message {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(31,95,255,0.12);
+      text-align: center;
+      animation: fadeInUp 1.6s 0.2s cubic-bezier(0.4,0,0.2,1) both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes logoPop {
+      0% { opacity: 0; transform: scale(0.7); }
+      80% { opacity: 1; transform: scale(1.05); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .fade-out {
+      opacity: 0 !important;
+      pointer-events: none;
+      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+    @media (max-width: 600px) {
+      .splash-logo { width: 240px; height: auto; margin-bottom: 1.2rem; }
+      .splash-message { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+    <img src="/assets/images/JP consultancy white.png" alt="JP Consultancy Logo" class="splash-logo" />
+    <div class="splash-message">Your Tagline Goes Here</div>
+  <script>
+    function goHome() {
+      document.body.classList.add('fade-out');
+      setTimeout(function() {
+        window.location.href = "/home";
+      }, 700);
+    }
+    setTimeout(goHome, 3000);
+    document.body.addEventListener('click', goHome);
+    document.body.addEventListener('touchstart', goHome);
+  </script>
+</body>
+</html> 
