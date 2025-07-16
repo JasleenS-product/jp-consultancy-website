@@ -179,7 +179,12 @@
       </div>
       <div class="why-choose-card" data-aos="fade-up" data-aos-delay="200">
         <div class="why-choose-icon">
-          <svg width="48" height="48" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v40M4 24h40"/></svg>
+          <svg width="48" height="48" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="20"/>
+            <path d="M24 8v16l8 8"/>
+            <path d="M12 24h24"/>
+            <path d="M24 12v24"/>
+          </svg>
         </div>
         <h3>Decades of Experience</h3>
         <p>Our team brings decades of combined experience in healthcare consulting.</p>
@@ -251,38 +256,35 @@
   </div>
 </section>
 
-<!-- Team Section -->
+<!-- Our Expert Team Section -->
 <section class="team-section">
   <div class="container">
     <div class="section-header" data-aos="fade-up">
-      <h2>{{ team.title }}</h2>
-      <p>{{ team.subtitle }}</p>
+      <h2>Our Expert Team</h2>
+      <p>Meet the professionals who drive excellence in healthcare consulting</p>
     </div>
-    <div class="team-carousel-container">
-      <div class="team-carousel">
-        {% for member in team.members %}
-        <div class="team-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
-          <div class="team-content">
-            <h3>{{ member.name }}</h3>
-            <p class="team-position">{{ member.position }}</p>
-            <p class="team-experience">{{ member.experience }}</p>
-            <p class="team-description">{{ member.description }}</p>
-          </div>
-        </div>
-        {% endfor %}
+    <div class="team-cards-row">
+      <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="/assets/images/project1.jpg" alt="Dr. Vijayalakshmi Pandey">
+        <h3>Dr. Vijayalakshmi Pandey</h3>
+        <p class="team-title">MANAGING DIRECTOR</p>
+        <p>Extensive clinical experience as a physician with a diploma in Hospital & Healthcare Management. Oversees consultancy operations with comprehensive knowledge of hospital processes and accreditation requirements including JCI, NABH, NABL, and ISO systems.</p>
       </div>
-      <div class="team-nav-arrows">
-        <button class="team-nav-arrow prev" onclick="scrollTeamCarousel('left')">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M15 18l-6-6 6-6"/>
-          </svg>
-        </button>
-        <button class="team-nav-arrow next" onclick="scrollTeamCarousel('right')">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M9 18l6-6-6-6"/>
-          </svg>
-        </button>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="/assets/images/project2.jpg" alt="Dr. Ramkishor Pandey">
+        <h3>Dr. Ramkishor Pandey</h3>
+        <p class="team-title">ADVISOR</p>
+        <p>Seasoned expert in hospital operations and quality systems with over 15 years of hands-on experience in clinical governance, accreditation, and strategic hospital management. Provides guidance and assistance in core activities.</p>
       </div>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+        <img src="/assets/images/project3.jpg" alt="Mr. Rahul Pandey">
+        <h3>Mr. Rahul Pandey</h3>
+        <p class="team-title">HEAD OF OPERATIONS</p>
+        <p>Graduate in Commerce with extensive business experience. Manages business operations and client relationships, ensuring smooth delivery of consultancy services and maintaining high client satisfaction.</p>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: 3rem;">
+      <a href="/about" class="btn btn-primary">Know More</a>
     </div>
   </div>
 </section>

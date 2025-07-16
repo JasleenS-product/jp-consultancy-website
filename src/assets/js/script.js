@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Start auto-advance only if there are multiple slides
     if (slides.length > 1) {
-        let carouselInterval = setInterval(autoAdvance, 5000);
+        let carouselInterval = setInterval(autoAdvance, 3000);
         
         const heroSection = document.querySelector('.hero-section');
         if (heroSection) {
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(carouselInterval);
             });
             heroSection.addEventListener('mouseleave', () => {
-                carouselInterval = setInterval(autoAdvance, 5000);
+                carouselInterval = setInterval(autoAdvance, 3000);
             });
         }
     }

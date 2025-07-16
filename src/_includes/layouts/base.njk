@@ -10,7 +10,7 @@
     <link rel="icon" type="image/svg+xml" href="/assets/icons/JP CONSULTANCY SVG.svg">
     
     <!-- CSS with cache-busting query string -->
-    <link rel="stylesheet" href="/assets/css/main.css?v=1.0.3">
+    <link rel="stylesheet" href="/assets/css/main.css?v=1.0.4">
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -35,10 +35,10 @@
             </a>
             
             <div class="nav-menu" id="nav-menu">
-                <a href="/" class="nav-link">Home</a>
+                <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
                 <div class="nav-dropdown">
-                    <a href="#" class="nav-link">Services</a>
-                    <div class="dropdown-content">
+                    <a href="#" class="nav-link {% if '/service-details/' in page.url %}active{% endif %}">Services</a>
+                    <div class="dropdown-content simple-dropdown">
                         <a href="/service-details/hospital-planning">Hospital Planning & Design</a>
                         <a href="/service-details/equipment">Hospital Equipment Planning</a>
                         <a href="/service-details/quality">Quality and Accreditation</a>
@@ -47,9 +47,9 @@
                         <a href="/service-details/tourism">Medical Tourism</a>
                     </div>
                 </div>
-                <a href="/projects" class="nav-link">Projects</a>
-                <a href="/about" class="nav-link">About</a>
-                <a href="/contact" class="nav-link">Contact</a>
+                <a href="/projects" class="nav-link {% if '/projects' in page.url %}active{% endif %}">Projects</a>
+                <a href="/about" class="nav-link {% if '/about' in page.url %}active{% endif %}">About</a>
+                <a href="/contact" class="nav-link {% if '/contact' in page.url %}active{% endif %}">Contact</a>
             </div>
             
             <div class="nav-toggle" id="nav-toggle">
