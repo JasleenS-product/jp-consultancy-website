@@ -18,64 +18,65 @@ hero:
     <!-- Project 1 -->
     <div class="project-horizontal-card">
       <div class="project-image-col">
-        <img src="/assets/images/project1.jpg" alt="NABH Accreditation" />
+        <img src="/assets/images/Carewell hospital.jpg" alt="Carewell Hospital" />
       </div>
       <div class="project-content-col">
-        <h3>Multi-Specialty Hospital NABH Accreditation</h3>
+        <h3>Carewell Hospital NABH Accreditation</h3>
         <div class="project-stats-row">
           <span class="project-stat-badge">NABH</span>
           <span class="project-stat-badge">200 Beds</span>
           <span class="project-stat-badge">18 Months</span>
-          <span class="project-stat-badge">Mumbai</span>
+          <span class="project-stat-badge">Mumbai, Maharashtra</span>
         </div>
-        <p>Guided a 200-bed hospital through the complete NABH accreditation process, including gap analysis, process optimization, staff training, and documentation. Achieved accreditation within the targeted timeframe.</p>
+        <p>Guided Carewell Hospital through the complete NABH accreditation process, including gap analysis, process optimization, staff training, and documentation. Achieved accreditation within the targeted timeframe.</p>
       </div>
     </div>
     <!-- Project 2 -->
     <div class="project-horizontal-card">
       <div class="project-image-col">
-        <img src="/assets/images/project2.jpg" alt="Equipment Planning" />
+        <img src="/assets/images/NATIONAL HOSPITAL.JPG" alt="National Hospital" />
       </div>
       <div class="project-content-col">
-        <h3>Hospital Equipment Planning & Procurement</h3>
+        <h3>National Hospital Equipment Planning & Procurement</h3>
         <div class="project-stats-row">
           <span class="project-stat-badge">₹8 Cr Budget</span>
           <span class="project-stat-badge">150 Beds</span>
           <span class="project-stat-badge">12 Months</span>
-          <span class="project-stat-badge">Pune</span>
+          <span class="project-stat-badge">Pune, Maharashtra</span>
         </div>
-        <p>Developed a comprehensive equipment plan for a new 150-bed hospital, managed vendor negotiations, and ensured seamless integration of medical technologies.</p>
+        <p>Developed a comprehensive equipment plan for National Hospital, managed vendor negotiations, and ensured seamless integration of medical technologies.</p>
       </div>
     </div>
     <!-- Project 3 -->
     <div class="project-horizontal-card">
       <div class="project-image-col">
-        <img src="/assets/images/project3.jpg" alt="Operations Management" />
+        <img src="/assets/images/SOMAIYA HOSPITAL.JPG" alt="Somaiya Hospital" />
       </div>
       <div class="project-content-col">
-        <h3>Hospital Operations Transformation</h3>
+        <h3>Somaiya Hospital Operations Transformation</h3>
         <div class="project-stats-row">
           <span class="project-stat-badge">30% Efficiency Gain</span>
           <span class="project-stat-badge">100 Beds</span>
           <span class="project-stat-badge">10 Months</span>
-          <span class="project-stat-badge">Delhi NCR</span>
+          <span class="project-stat-badge">Mumbai, Maharashtra</span>
         </div>
-        <p>Transformed hospital operations for a 100-bed facility, improving patient flow, staff efficiency, and compliance with quality standards.</p>
+        <p>Transformed operations for Somaiya Hospital, improving patient flow, staff efficiency, and compliance with quality standards. Also coordinated medical tourism services for international patients, including treatment planning, travel logistics, and post-care support.</p>
       </div>
     </div>
     <!-- Project 4 -->
     <div class="project-horizontal-card">
       <div class="project-image-col">
-        <img src="/assets/images/services_background.jpg" alt="Medical Tourism" />
+        <img src="/assets/images/project1.jpg" alt="Yashwantrao Jadhav Memorial Hospital" />
       </div>
       <div class="project-content-col">
-        <h3>Medical Tourism Coordination</h3>
+        <h3>Yashwantrao Jadhav Memorial Hospital Planning & Accreditation</h3>
         <div class="project-stats-row">
-          <span class="project-stat-badge">120+ Patients</span>
+          <span class="project-stat-badge">Planning & Accreditation</span>
+          <span class="project-stat-badge">Private</span>
           <span class="project-stat-badge">Ongoing</span>
-          <span class="project-stat-badge">International</span>
+          <span class="project-stat-badge">Mumbai, Maharashtra</span>
         </div>
-        <p>Coordinated medical tourism services for international patients, including treatment planning, travel logistics, and post-care support.</p>
+        <p>Provided comprehensive planning and NABH accreditation support for Yashwantrao Jadhav Memorial Hospital, including strategic consulting for compliance and operational excellence.</p>
       </div>
     </div>
     <!-- Project 5 -->

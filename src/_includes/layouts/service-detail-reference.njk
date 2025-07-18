@@ -39,7 +39,7 @@
                 <a href="/" class="nav-link">Home</a>
                 <div class="nav-dropdown">
                     <a href="#" class="nav-link">Services</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content simple-dropdown">
                         <a href="/service-details/hospital-planning">Hospital Planning & Design</a>
                         <a href="/service-details/equipment">Hospital Equipment Planning</a>
                         <a href="/service-details/quality">Quality and Accreditation</a>
@@ -114,9 +114,6 @@
                     <div class="matrix-item matrix-{{ service.type }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
                         {% if service.type == "text" %}
                         <div class="service-card">
-                            <div class="service-icon">
-                                <img src="/assets/icons/{{ service.icon }}.svg" alt="{{ service.title }}" onerror="this.style.display='none'">
-                            </div>
                             <h3>{{ service.title }}</h3>
                             <p>{{ service.description }}</p>
                         </div>
@@ -133,9 +130,6 @@
                 <div class="core-services-grid">
                     {% for service in core_services.services %}
                     <div class="core-service-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
-                        <div class="service-icon">
-                            <img src="/assets/icons/{{ service.icon }}.svg" alt="{{ service.title }}" onerror="this.style.display='none'">
-                        </div>
                         <h3>{{ service.title }}</h3>
                         <p>{{ service.description }}</p>
                     </div>

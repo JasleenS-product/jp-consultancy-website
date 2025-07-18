@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Blue gear -->
+  <path d="M100 40 L120 50 L140 40 L150 60 L170 70 L160 90 L180 100 L160 110 L170 130 L150 140 L140 160 L120 150 L100 160 L80 150 L60 160 L50 140 L30 130 L40 110 L20 100 L40 90 L30 70 L50 60 L60 40 L80 50 Z" fill="#1F5FFF"/>
+  
+  <!-- White circle in center -->
+  <circle cx="100" cy="100" r="35" fill="white"/>
+  
+  <!-- Black checkmark -->
+  <path d="M85 100 L95 110 L120 85" stroke="black" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> 

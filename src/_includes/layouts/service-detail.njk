@@ -39,58 +39,13 @@
                 <a href="/" class="nav-link">Home</a>
                 <div class="nav-dropdown">
                     <a href="#" class="nav-link active">Services</a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-header">
-                            <h4>Our Services</h4>
-                            <p>Comprehensive healthcare consultancy solutions</p>
-                        </div>
-                        <div class="dropdown-grid">
-                            <a href="/service-details/hospital-planning" class="dropdown-item">
-                                <div class="dropdown-icon">🏥</div>
-                                <div class="dropdown-text">
-                                    <span class="dropdown-title">Hospital Planning & Design</span>
-                                    <span class="dropdown-desc">Strategic hospital planning and architectural design</span>
-                                </div>
-                            </a>
-                            <a href="/service-details/equipment" class="dropdown-item">
-                                <div class="dropdown-icon">⚙️</div>
-                                <div class="dropdown-text">
-                                    <span class="dropdown-title">Hospital Equipment Planning</span>
-                                    <span class="dropdown-desc">Medical equipment selection and procurement</span>
-                                </div>
-                            </a>
-                            <a href="/service-details/quality" class="dropdown-item">
-                                <div class="dropdown-icon">🏆</div>
-                                <div class="dropdown-text">
-                                    <span class="dropdown-title">Quality and Accreditation</span>
-                                    <span class="dropdown-desc">NABH and quality management systems</span>
-                                </div>
-                            </a>
-                            <a href="/service-details/training" class="dropdown-item">
-                                <div class="dropdown-icon">📚</div>
-                                <div class="dropdown-text">
-                                    <span class="dropdown-title">Health Training</span>
-                                    <span class="dropdown-desc">Healthcare staff training and development</span>
-                                </div>
-                            </a>
-                            <a href="/service-details/operations" class="dropdown-item">
-                                <div class="dropdown-icon">⚡</div>
-                                <div class="dropdown-text">
-                                    <span class="dropdown-title">Hospital Operations</span>
-                                    <span class="dropdown-desc">Operational efficiency and process optimization</span>
-                                </div>
-                            </a>
-                            <a href="/service-details/tourism" class="dropdown-item">
-                                <div class="dropdown-icon">🌍</div>
-                                <div class="dropdown-text">
-                                    <span class="dropdown-title">Medical Tourism</span>
-                                    <span class="dropdown-desc">Medical tourism strategy and implementation</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="dropdown-footer">
-                            <a href="/contact" class="dropdown-cta">Get Started Today</a>
-                        </div>
+                    <div class="dropdown-content simple-dropdown">
+                        <a href="/service-details/hospital-planning">Hospital Planning & Design</a>
+                        <a href="/service-details/equipment">Hospital Equipment Planning</a>
+                        <a href="/service-details/quality">Quality and Accreditation</a>
+                        <a href="/service-details/training">Health Training</a>
+                        <a href="/service-details/operations">Hospital Operations</a>
+                        <a href="/service-details/tourism">Medical Tourism</a>
                     </div>
                 </div>
                 <a href="/projects" class="nav-link">Projects</a>
@@ -132,17 +87,7 @@
                     {% for point in why_choose.points %}
                     <div class="why-choose-card custom-why-choose-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
                         <div class="why-choose-icon custom-why-choose-icon">
-                            {% if point.icon == 'experience' %}
-                            <svg width="36" height="36" fill="none" stroke="#1F5FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="16"/><path d="M12 24l6-6 6 6"/></svg>
-                            {% elif point.icon == 'cohort' %}
-                            <svg width="36" height="36" fill="none" stroke="#1F5FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="16"/><path d="M18 12v12"/><path d="M12 18h12"/></svg>
-                            {% elif point.icon == 'unbiased' %}
-                            <svg width="36" height="36" fill="none" stroke="#1F5FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="24" height="24" rx="8"/><path d="M12 18h12"/></svg>
-                            {% elif point.icon == 'business-models' %}
-                            <svg width="36" height="36" fill="none" stroke="#1F5FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="20" height="20" rx="6"/><path d="M18 14v8"/><path d="M14 18h8"/></svg>
-                            {% else %}
-                            <svg width="36" height="36" fill="none" stroke="#1F5FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="16"/><path d="M18 10v16M10 18h16"/></svg>
-                            {% endif %}
+                            <img src="/assets/icons/service-icon.svg" alt="Why Choose Us Icon">
                         </div>
                         <h3>{{ point.title }}</h3>
                         <p>{{ point.description }}</p>
@@ -169,9 +114,6 @@
                     <div class="matrix-item matrix-{{ service.type }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
                         {% if service.type == "text" %}
                         <div class="service-card">
-                            <div class="service-icon">
-                                <img src="/assets/icons/{{ service.icon }}.svg" alt="{{ service.title }}" onerror="this.style.display='none'">
-                            </div>
                             <h3>{{ service.title }}</h3>
                             <p>{{ service.description }}</p>
                         </div>
@@ -188,9 +130,6 @@
                 <div class="core-services-grid">
                     {% for service in core_services.services %}
                     <div class="core-service-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
-                        <div class="service-icon">
-                            <img src="/assets/icons/{{ service.icon }}.svg" alt="{{ service.title }}" onerror="this.style.display='none'">
-                        </div>
                         <h3>{{ service.title }}</h3>
                         <p>{{ service.description }}</p>
                     </div>
@@ -203,7 +142,7 @@
 
         <!-- Approach Section -->
         {% if approach %}
-        <section class="approach-section">
+        <section class="approach-section" {% if approach_background %}style="background-image: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('{{ approach_background }}')"{% endif %}>
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
                     <h2>{{ approach.title }}</h2>
@@ -213,33 +152,11 @@
                     Our planning methodology is rooted in industry best practices and tailored to the unique needs of each client. This ensures smooth patient movement, improved infection control, and reduced operational inefficiencies.
                 </div>
                 {% if approach.timeline %}
-                <div class="approach-timeline-animated">
-                    {% for step in approach.steps %}
-                    <div class="timeline-step-animated" data-aos="fade-up" data-aos-delay="{{ loop.index * 150 }}">
-                        <div class="timeline-line"></div>
-                        <div class="step-content-animated">
-                            <div class="step-number-animated">{{ step.number }}</div>
-                            <div class="step-icon-animated">
-                                <img src="/assets/icons/{{ step.icon }}.svg" alt="{{ step.title }}" onerror="this.style.display='none'">
-                            </div>
-                            <div class="step-details">
-                                <h3>{{ step.title }}</h3>
-                                <p>{{ step.description }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-                {% else %}
                 <div class="approach-timeline">
                     {% for step in approach.steps %}
-                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
-                        <div class="timeline-connector"></div>
-                        <div class="step-number">{{ step.number }}</div>
-                        <div class="step-content">
-                            <div class="step-icon">
-                                <img src="/assets/icons/{{ step.icon }}.svg" alt="{{ step.title }}" onerror="this.style.display='none'">
-                            </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">{{ step.number }}</div>
+                        <div class="timeline-content">
                             <h3>{{ step.title }}</h3>
                             <p>{{ step.description }}</p>
                         </div>
@@ -262,9 +179,6 @@
                 <div class="deliverables-scroll">
                     {% for item in deliverables.items %}
                     <div class="deliverable-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
-                        <div class="deliverable-icon">
-                            <img src="/assets/icons/{{ item.icon }}.svg" alt="{{ item.title }}" onerror="this.style.display='none'">
-                        </div>
                         <h3>{{ item.title }}</h3>
                         <p>{{ item.description }}</p>
                     </div>
