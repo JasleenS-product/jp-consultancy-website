@@ -216,8 +216,17 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            // Handle new animation classes
+            if (entry.target.classList.contains('fade-in-up') || 
+                entry.target.classList.contains('fade-in-left') || 
+                entry.target.classList.contains('fade-in-right') || 
+                entry.target.classList.contains('scale-in')) {
+                entry.target.classList.add('animate');
+            } else {
+                // Legacy animation handling
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
         }
     });
 }, observerOptions);
@@ -255,9 +264,18 @@ if (projectsGrid) {
     });
 }
 
+// Initialize scroll animations
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in');
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
 // Initialize tooltips or other interactive elements
 document.addEventListener('DOMContentLoaded', () => {
-    // Add any additional initialization code here
+    // Initialize scroll animations
+    initScrollAnimations();
     
     // Ensure all images are loaded properly
     const images = document.querySelectorAll('img');
@@ -337,22 +355,101 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Lazy loading for images
-document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('img[data-src]');
+// Enhanced lazy loading for images with better performance
+function initLazyLoading() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
     
-    const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                    imageObserver.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
         });
+        
+        images.forEach(img => {
+            imageObserver.observe(img);
+        });
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        images.forEach(img => img.classList.add('loaded'));
+    }
+}
+
+// Optimize image loading
+function optimizeImages() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        // Add lazy loading attribute if not present
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+        
+        // Handle image load errors
+        img.addEventListener('error', function() {
+            this.style.display = 'none';
+            console.warn('Failed to load image:', this.src);
+        });
+        
+        // Add loaded class when image loads
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+            });
+        }
     });
+}
+
+// Performance monitoring
+function trackPerformance() {
+    if ('performance' in window && 'getEntriesByType' in performance) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const navigation = performance.getEntriesByType('navigation')[0];
+                if (navigation) {
+                    console.log('Page Load Time:', navigation.loadEventEnd - navigation.loadEventStart + 'ms');
+                    console.log('DOM Content Loaded:', navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart + 'ms');
+                }
+            }, 0);
+        });
+    }
+}
+
+// Initialize all optimizations
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize scroll animations
+    initScrollAnimations();
     
-    images.forEach(img => imageObserver.observe(img));
+    // Initialize lazy loading
+    initLazyLoading();
+    
+    // Optimize images
+    optimizeImages();
+    
+    // Track performance
+    trackPerformance();
+    
+    // Preload critical resources
+    const criticalImages = [
+        '/assets/images/Hero.jpg',
+        '/assets/images/JP CONSULTANCY WHITE SVG.svg'
+    ];
+    
+    criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+    });
 });
 
 // Back to top button
@@ -538,4 +635,57 @@ function scrollTeamCarousel(direction) {
             behavior: 'smooth'
         });
     }
-} 
+}
+
+// Project Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCarousels = document.querySelectorAll('.image-carousel');
+    projectCarousels.forEach(carousel => {
+        const images = carousel.querySelectorAll('.carousel-container img');
+        const prevBtn = carousel.querySelector('.carousel-nav.prev');
+        const nextBtn = carousel.querySelector('.carousel-nav.next');
+        const dots = carousel.querySelectorAll('.carousel-dots .dot');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                showImage(currentIndex);
+            });
+        });
+
+        // Auto-advance carousel
+        if (images.length > 1) {
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }, 5000);
+        }
+
+        // Initialize first image
+        if (images.length > 0) {
+            showImage(0);
+        }
+    });
+}); 

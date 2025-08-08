@@ -1,6 +1,8 @@
 ---
-layout: null
-permalink: "/index.html"
+permalink: /
+title: "Best Healthcare Consultancy in India | JP Consultancy"
+description: "Leading hospital consultants in India offering hospital planning, design, operations & accreditation services. Trusted by 50+ healthcare clients."
+keywords: "healthcare consultancy india, best hospital consultants in india, hospital planning, cheapest hospital plan"
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -116,22 +118,33 @@ permalink: "/index.html"
     <div class="splash-message">Building the Next Generation of Hospitals—Smarter, Safer, Future-Ready.</div>
   </div>
   <script>
-    setTimeout(function() {
-      document.getElementById('loader').classList.add('hide');
-      var splash = document.getElementById('splash-content');
-      splash.style.opacity = 1;
-      splash.style.pointerEvents = 'auto';
-      splash.style.transition = 'none';
-    }, 1750);
-    function goHome() {
-      document.body.classList.add('fade-out');
+    // Check if splash was already shown in this session
+    if (sessionStorage.getItem('splashShown')) {
+      // If already shown, redirect immediately
+      window.location.href = "/home";
+    } else {
+      // Mark splash as shown and proceed with animation
+      sessionStorage.setItem('splashShown', 'true');
+      
       setTimeout(function() {
-        window.location.href = "/home";
-      }, 700);
+        document.getElementById('loader').classList.add('hide');
+        var splash = document.getElementById('splash-content');
+        splash.style.opacity = 1;
+        splash.style.pointerEvents = 'auto';
+        splash.style.transition = 'none';
+      }, 1750);
+      
+      function goHome() {
+        document.body.classList.add('fade-out');
+        setTimeout(function() {
+          window.location.href = "/home";
+        }, 700);
+      }
+      
+      setTimeout(goHome, 4750);
+      document.body.addEventListener('click', goHome);
+      document.body.addEventListener('touchstart', goHome);
     }
-    setTimeout(goHome, 4750);
-    document.body.addEventListener('click', goHome);
-    document.body.addEventListener('touchstart', goHome);
   </script>
 </body>
 </html> 

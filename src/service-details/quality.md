@@ -1,10 +1,11 @@
 ---
-layout: service-detail.njk
-title: "Healthcare Quality Accreditation Services | JP Consultancy"
-description: "JP Consultancy provides comprehensive healthcare quality accreditation services—from gap analysis and compliance assessment to certification preparation and ongoing quality management—ensuring your facility meets international standards."
+layout: layouts/service-detail.njk
+title: "NABH & JCI Accreditation Consulting India | JP Consultancy"
+description: "Accreditation services for NABH, NABL & JCI. Get expert consulting, gap audits, SOPs & training for hospitals and clinics across India."
+keywords: "nabh accreditation consultants, nabh consultant, jci accreditation india, nabh consultancy, healthcare quality improvement consultant, jci accreditation in india"
 hero:
-  title: "Healthcare Quality Accreditation"
-  subtitle: "Achieve international healthcare standards through comprehensive quality management and accreditation support."
+  title: "NABH & JCI Accreditation Consulting"
+  subtitle: "Achieve national and international healthcare standards with expert NABH consultancy, JCI accreditation guidance, and quality improvement solutions tailored for hospitals and clinics."
   background: "/assets/images/background service.jpg"
 why_choose:
   title: "Why Choose JP Consultancy for Quality & Accreditation"
@@ -24,7 +25,7 @@ why_choose:
 core_services:
   title: "Our Core Quality Accreditation Services"
   background: "/assets/images/services_background.jpg"
-  matrix_layout: true
+
   services:
     - type: "text"
       title: "Gap Analysis & Assessment"

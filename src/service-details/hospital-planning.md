@@ -1,10 +1,11 @@
 ---
-layout: service-detail.njk
-title: "Hospital Planning & Design Services | JP Consultancy India"
-description: "JP Consultancy offers end-to-end hospital planning and design solutions, including NABH-compliant layouts, equipment planning, and patient-centric facility design. Future-ready, compliant, and optimized for care delivery."
+layout: layouts/service-detail.njk
+title: "Hospital Planning & Design Services | JP Consultancy"
+description: "End-to-end hospital planning, NABH layouts, and architectural design. Cost-effective hospital plans tailored to facility size and compliance needs."
+keywords: "hospital planning, hospital design services, cheapest hospital plan, hospital plan prices, hospital architecture design & planning"
 hero:
-  title: "Hospital Planning & Design"
-  subtitle: "Strategic, compliant, and patient-focused planning solutions for healthcare facilities of every scale."
+  title: "Hospital Planning & Design Services in India"
+  subtitle: "Strategic, NABH-compliant, and patient-focused hospital planning solutions tailored to every scale, delivering affordable hospital design and architecture across India"
   background: "/assets/images/Hero.jpg"
 why_choose:
   title: "Why Choose JP Consultancy for Hospital Planning & Design"
@@ -24,7 +25,6 @@ why_choose:
 core_services:
   title: "Our Core Hospital Planning Services"
   background: "/assets/images/services_background.jpg"
-  matrix_layout: true
   services:
     - type: "text"
       title: "360° NABH-Compliant Planning"

@@ -1,10 +1,11 @@
 ---
-layout: service-detail.njk
-title: "Medical Tourism Facilitation | JP Consultancy"
-description: "JP Consultancy offers seamless, compassionate, and world-class medical travel experiences, managing every detail from initial consultation to post-treatment recovery."
+layout: layouts/service-detail.njk
+title: "Medical Tourism Consulting Services India | JP Consultancy"
+description: "Build a global patient strategy. We enable hospitals in India to attract international patients through medical tourism & wellness partnerships."
+keywords: "medical tourism india, wellness tourism in india, medical tourism companies in india, best medical tourism agency in india, best medical tourism companies in india, medical tourism for hospital"
 hero:
-  title: "Medical Tourism Facilitation"
-  subtitle: "Your global healthcare partner for seamless, compassionate, and world-class medical travel experiences."
+  title: "Medical Tourism in India – Seamless Global Care"
+  subtitle: "Your trusted partner in medical tourism facilitation, offering world-class healthcare, wellness tourism in India, and personalized support for international patients seeking safe, effective, and affordable treatments."
   background: "/assets/images/medical-tourism.jpg"
 why_choose:
   title: "Why Choose JP Consultancy for Medical Tourism"
@@ -24,7 +25,7 @@ why_choose:
 core_services:
   title: "Our Comprehensive Medical Tourism Services"
   background: "/assets/images/services_background.jpg"
-  matrix_layout: true
+
   services:
     - type: "text"
       title: "End-to-End Treatment Coordination"

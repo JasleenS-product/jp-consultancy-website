@@ -48,7 +48,7 @@
                         <a href="/service-details/tourism">Medical Tourism</a>
                     </div>
                 </div>
-                <a href="/projects" class="nav-link">Projects</a>
+                <a href="/projects.html" class="nav-link">Projects</a>
                 <a href="/about" class="nav-link">About</a>
                 <a href="/contact" class="nav-link">Contact</a>
             </div>
@@ -68,7 +68,7 @@
         <!-- Page Hero Section -->
         <section class="service-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ hero.background }}')">
             <div class="container">
-                <div class="service-hero-content" data-aos="fade-up">
+                <div class="service-hero-content">
                     <h1>{{ hero.title }}</h1>
                     <p>{{ hero.subtitle }}</p>
                 </div>
@@ -79,13 +79,13 @@
         {% if why_choose %}
         <section class="why-choose-section">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
+                <div class="section-header fade-in-up">
                     <h2>{{ why_choose.title }}</h2>
                     <p>Expert Solutions for Healthcare Excellence</p>
                 </div>
                 <div class="why-choose-grid custom-why-choose-grid">
                     {% for point in why_choose.points %}
-                    <div class="why-choose-card custom-why-choose-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                    <div class="why-choose-card custom-why-choose-card fade-in-up animate-delay-{{ loop.index }}00">
                         <div class="why-choose-icon custom-why-choose-icon">
                             <img src="/assets/icons/service-icon.svg" alt="Why Choose Us Icon">
                         </div>
@@ -102,16 +102,15 @@
         {% if core_services %}
         <section class="core-services-section" {% if core_services.background %}style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('{{ core_services.background }}')"{% endif %}>
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
+                <div class="section-header fade-in-up">
                     <h2>{{ core_services.title }}</h2>
                     <p>Comprehensive Healthcare Solutions</p>
                 </div>
                 
                 <!-- Core Services Matrix Grid -->
-                {% if core_services.matrix_layout %}
                 <div class="core-services-matrix">
                     {% for service in core_services.services %}
-                    <div class="matrix-item matrix-{{ service.type }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                    <div class="matrix-item matrix-{{ service.type }} {% if service.type == 'text' %}fade-in-left{% else %}fade-in-right{% endif %} animate-delay-{{ loop.index }}00">
                         {% if service.type == "text" %}
                         <div class="service-card">
                             <h3>{{ service.title }}</h3>
@@ -125,17 +124,6 @@
                     </div>
                     {% endfor %}
                 </div>
-                {% else %}
-                <!-- Fallback to original grid -->
-                <div class="core-services-grid">
-                    {% for service in core_services.services %}
-                    <div class="core-service-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
-                        <h3>{{ service.title }}</h3>
-                        <p>{{ service.description }}</p>
-                    </div>
-                    {% endfor %}
-                </div>
-                {% endif %}
             </div>
         </section>
         {% endif %}
@@ -144,7 +132,7 @@
         {% if approach %}
         <section class="approach-section" {% if approach_background %}style="background-image: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('{{ approach_background }}')"{% endif %}>
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
+                <div class="section-header fade-in-up">
                     <h2>{{ approach.title }}</h2>
                     <p>{{ approach.content }}</p>
                 </div>
@@ -172,13 +160,16 @@
         {% if deliverables %}
         <section class="deliverables-section">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
+                <div class="section-header fade-in-up">
                     <h2>{{ deliverables.title }}</h2>
                     <p>Complete Project Deliverables</p>
                 </div>
                 <div class="deliverables-scroll">
                     {% for item in deliverables.items %}
-                    <div class="deliverable-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                    <div class="deliverable-card scale-in animate-delay-{{ loop.index }}00">
+                        <div class="deliverable-icon">
+                            <img src="/assets/icons/{{ item.icon }}.svg" alt="{{ item.title }}" onerror="this.style.display='none'">
+                        </div>
                         <h3>{{ item.title }}</h3>
                         <p>{{ item.description }}</p>
                     </div>
@@ -201,7 +192,7 @@
         {% if cta %}
         <section class="service-cta-section">
             <div class="container">
-                <div class="cta-content" data-aos="fade-up">
+                <div class="cta-content fade-in-up">
                     <div class="cta-background">
                         <div class="cta-overlay"></div>
                     </div>
@@ -237,7 +228,7 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>

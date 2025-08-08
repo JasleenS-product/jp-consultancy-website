@@ -1,10 +1,11 @@
 ---
-layout: service-detail.njk
-title: "Hospital Equipment Planning Services | JP Consultancy"
-description: "JP Consultancy offers end-to-end hospital equipment planning services—from need analysis and vendor evaluation to installation supervision and commissioning—ensuring cost-effective, future-ready medical infrastructure."
+layout: layouts/service-detail.njk
+title: "Hospital Equipment Planning Experts | JP Consultancy"
+description: "Strategic medical device consultancy for hospitals. We handle planning, budgeting, and installation of essential hospital equipment with precision."
+keywords: "hospital equipment planning, medical device consulting, medical device consultancy, medical device design consultancy, medical device consulting companies"
 hero:
-  title: "Hospital Equipment Planning"
-  subtitle: "Efficient, cost-conscious, and future-ready medical equipment planning tailored for every healthcare facility."
+  title: "Hospital Equipment Planning & Medical Device Consulting"
+  subtitle: "Efficient, cost-effective, and future-ready hospital equipment planning services—guided by expert medical device consultancy for every healthcare facility."
   background: "/assets/images/background service.jpg"
 why_choose:
   title: "Why Choose JP Consultancy for Hospital Equipment Planning"
@@ -24,7 +25,6 @@ why_choose:
 core_services:
   title: "Our Core Equipment Planning Services"
   background: "/assets/images/services_background.jpg"
-  matrix_layout: true
   services:
     - type: "text"
       title: "Medical Equipment Need Assessment"

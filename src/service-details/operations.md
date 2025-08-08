@@ -1,10 +1,11 @@
 ---
-layout: service-detail.njk
-title: "Healthcare Operations Management Services | JP Consultancy"
-description: "JP Consultancy provides comprehensive healthcare operations management services—from process optimization and workflow design to performance monitoring and efficiency improvement—ensuring optimal operational excellence."
+layout: layouts/service-detail.njk
+title: "Hospital Operations Consulting India | JP Consultancy"
+description: "Improve hospital operations, patient experience, and revenue. Strategic consulting for empanelments, TPA tie-ups & quality process improvement."
+keywords: "hospital operations consulting, hospital operations consulting, patient satisfaction surveys"
 hero:
-  title: "Healthcare Operations Management"
-  subtitle: "Optimize your healthcare facility's operations for maximum efficiency, quality, and patient satisfaction."
+  title: "Hospital Operations Consulting Services"
+  subtitle: "Elevating healthcare delivery through expert hospital operations consulting, patient satisfaction strategies, and efficiency-driven system redesign."
   background: "/assets/images/background service.jpg"
 why_choose:
   title: "Why Choose JP Consultancy for Hospital Operations"
@@ -24,7 +25,7 @@ why_choose:
 core_services:
   title: "Our Core Operations Management Services"
   background: "/assets/images/services_background.jpg"
-  matrix_layout: true
+
   services:
     - type: "text"
       title: "Process Optimization"

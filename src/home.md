@@ -1,7 +1,8 @@
 ---
-layout: home.njk
-title: JP Consultancy - Healthcare Design & Equipment Strategists
-description: Your trusted partner in hospital design, planning, and equipment management for unparalleled operational efficiency. 
+layout: layouts/home.njk
+title: "Best Healthcare Consultancy in India | JP Consultancy"
+description: "Leading hospital consultants in India offering hospital planning, design, operations & accreditation services. Trusted by 50+ healthcare clients."
+keywords: "healthcare consultancy india, best hospital consultants in india, hospital planning, cheapest hospital plan"
 permalink: "/home/"
 hero:
   title: "Visionary Design. Strategic Procurement."
@@ -52,27 +53,24 @@ services:
 projects_hero:
   title: "Featured Projects"
   subtitle: "Transforming healthcare spaces across India"
+  cta: "All Projects"
+  cta_link: "/projects.html"
 projects:
   - title: "Carewell Hospital"
     location: "Mumbai, Maharashtra"
-    description: "Complete NABH accreditation and operational transformation. Guided the hospital through the entire NABH process, including gap analysis, process optimization, staff training, and documentation. Achieved accreditation within the targeted timeframe."
-    image: "/assets/images/Carewell hospital.jpg"
-    category: "Accreditation"
-  - title: "National Hospital"
-    location: "Pune, Maharashtra"
-    description: "Hospital planning and design for 200-bed facility. Developed a comprehensive equipment plan, managed vendor negotiations, and ensured seamless integration of medical technologies."
-    image: "/assets/images/NATIONAL HOSPITAL.JPG"
-    category: "Planning"
+    description: "250-bed facility with complete NABH quality standards implementation. Healthcare accreditation consulting and operational excellence programs achieving accreditation within targeted timeframe."
+    image: "/assets/images/carewell1.jpg"
+    category: "Quality & Accreditation"
+  - title: "Navjeevan Advanced Diagnostics"
+    location: "Indore, Madhya Pradesh"
+    description: "NADL diagnostic center with advanced diagnostics and equipment setup. Technology integration and comprehensive diagnostic facility development."
+    image: "/assets/images/NADL1.jpg"
+    category: "Diagnostic Center Setup"
   - title: "Somaiya Hospital"
     location: "Mumbai, Maharashtra"
-    description: "Medical tourism and international patient services. Coordinated medical tourism services for international patients, including treatment planning, travel logistics, and post-care support."
+    description: "556-bed multi-specialty hospital with NABH quality certification. Healthcare accreditation support and clinical excellence programs for comprehensive patient care."
     image: "/assets/images/SOMAIYA HOSPITAL.JPG"
-    category: "Tourism"
-  - title: "Yashwantrao Jadhav Memorial Hospital, Research Centre Pvt. Ltd."
-    location: "Mumbai, Maharashtra"
-    description: "Comprehensive hospital planning and NABH accreditation support. Provided strategic consulting for planning, compliance, and operational excellence."
-    image: "/assets/images/project1.jpg"
-    category: "Planning & Accreditation"
+    category: "Quality & Accreditation"
 approach:
   title: "Our Approach"
   subtitle: "Client-oriented, quality-driven with end-to-end assistance"

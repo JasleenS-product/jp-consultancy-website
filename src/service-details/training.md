@@ -1,10 +1,11 @@
 ---
-layout: service-detail.njk
-title: "Healthcare Training & Development Services | JP Consultancy"
-description: "JP Consultancy provides comprehensive healthcare training and development services—from clinical skills enhancement to leadership development and compliance training—ensuring your team delivers exceptional care."
+layout: layouts/service-detail.njk
+title: "Hospital Staff Training Programs | JP Consultancy"
+description: "Empower hospital staff with training in patient safety, ACLS/BLS, fire safety & quality protocols. Supporting accreditation readiness & care delivery."
+keywords: "hospital staff training, patient safety certificate program, quality and patient safety courses, training program for hospital staff"
 hero:
-  title: "Healthcare Training & Development"
-  subtitle: "Empower your healthcare team with comprehensive training programs designed to enhance skills, improve patient care, and drive organizational excellence."
+  title: "Hospital Staff Training & Development Programs"
+  subtitle: "Empower your healthcare workforce through specialized training programs in patient safety, soft skills, and accreditation readiness—designed to meet industry standards and improve care outcomes."
   background: "/assets/images/background service.jpg"
 why_choose:
   title: "Why Choose JP Consultancy for Health Training"
@@ -24,32 +25,20 @@ why_choose:
 core_services:
   title: "Our Core Training Services"
   background: "/assets/images/services_background.jpg"
-  matrix_layout: true
+
   services:
     - type: "text"
       title: "Clinical Skills Training"
       description: "Enhance clinical competencies and patient care skills across all healthcare disciplines."
-    - type: "image"
-      image: "/assets/images/project1.jpg"
-      alt: "Clinical Skills Training"
     - type: "text"
       title: "Leadership Development"
       description: "Develop healthcare leaders with management, communication, and strategic thinking skills."
-    - type: "image"
-      image: "/assets/images/project2.jpg"
-      alt: "Leadership Development"
     - type: "text"
       title: "Compliance & Safety Training"
       description: "Ensure regulatory compliance and patient safety through comprehensive training programs."
-    - type: "image"
-      image: "/assets/images/project3.jpg"
-      alt: "Compliance Training"
     - type: "text"
       title: "Quality Improvement Training"
       description: "Build quality improvement capabilities and continuous learning culture in your organization."
-    - type: "image"
-      image: "/assets/images/Approach.jpg"
-      alt: "Quality Improvement"
     - type: "text"
       title: "Technology & Digital Skills"
       description: "Train staff on healthcare technology, digital tools, and electronic health record systems."

@@ -30,7 +30,6 @@ why_choose:
 core_services:
   title: "Our Core Consultancy Services"
   background: "/assets/images/services_background.jpg"
-  matrix_layout: true
   services:
     - type: "text"
       title: "Project Planning & Conceptualization"
