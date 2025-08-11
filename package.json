@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "npx eleventy && npx browser-sync start --server '_site' --files '_site' --port 8080",
-    "build": "npx eleventy"
+    "build": "npx eleventy",
+    "deploy": "./deploy.sh",
+    "monitor": "node monitor-site.js",
+    "serve": "npx http-server _site -p 8080 --cors"
   },
   "keywords": [],
   "author": "JP Consultancy",
