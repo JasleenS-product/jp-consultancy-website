@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: page.njk
 title: "Healthcare Industry Blogs & Insights | JP Consultancy"
 description: "Expert insights on hospital planning, NABH accreditation, medical equipment, and healthcare trends. Stay updated with latest industry knowledge and best practices."
 keywords: "healthcare blogs, hospital planning insights, nabh accreditation tips, medical equipment trends, healthcare consultancy articles, hospital design blog"

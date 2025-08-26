@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: page.njk
 title: "Strategic Hospital Planning 2024: Cost-Effective Design Solutions | JP Consultancy"
 description: "Complete guide to affordable hospital planning, architectural design strategies, and NABH-compliant layouts. Expert insights on hospital plan prices, design costs, and strategic planning."
 keywords: "hospital planning, hospital design services, cheapest hospital plan, hospital plan prices, hospital architecture design, affordable hospital planning, strategic hospital planning, hospital layout design, nabh compliant hospital design"

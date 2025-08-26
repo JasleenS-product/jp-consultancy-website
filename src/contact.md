@@ -1,12 +1,12 @@
 ---
-layout: layouts/base.njk
+layout: page.njk
 title: "Contact JP Consultancy - Healthcare Consulting India"
 description: "Get in touch with JP Consultancy for hospital planning, design, and operations consulting. Call +91 98196 55543 or email us today."
 keywords: "contact jp consultancy, healthcare consultants india, hospital planning contact, healthcare consulting services"
 hero:
   title: "Contact Us"
   subtitle: "Let's discuss your healthcare project"
-  background: "/assets/images/Hero.jpg"
+  background: "/assets/images/contact-hero-banner.jpg"
 ---
 
 <style>

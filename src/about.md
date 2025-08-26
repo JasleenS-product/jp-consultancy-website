@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: page.njk
 title: "About JP Consultancy - Healthcare Experts India"
 description: "Learn about JP Consultancy's expertise in hospital planning, design, and operations consulting. Trusted healthcare consultants serving India since years."
 keywords: "healthcare consultancy india, hospital consultants, about jp consultancy, healthcare experts india"

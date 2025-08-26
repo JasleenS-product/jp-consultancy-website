@@ -1,5 +1,5 @@
 ---
-layout: layouts/service-detail.njk
+layout: service-detail.njk
 title: "Hospital Staff Training Programs | JP Consultancy"
 description: "Empower hospital staff with training in patient safety, ACLS/BLS, fire safety & quality protocols. Supporting accreditation readiness & care delivery."
 keywords: "hospital staff training, patient safety certificate program, quality and patient safety courses, training program for hospital staff"

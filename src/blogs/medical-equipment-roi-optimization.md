@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: page.njk
 title: "Medical Equipment ROI Optimization: Lifecycle Management Guide 2024 | JP Consultancy"
 description: "Expert insights on medical equipment procurement, lifecycle management, vendor negotiations, and cost-effective solutions for healthcare facilities. Maximize your equipment ROI."
 keywords: "medical equipment planning, hospital equipment procurement, medical device consulting, equipment lifecycle management, healthcare equipment ROI, medical equipment vendor negotiations"

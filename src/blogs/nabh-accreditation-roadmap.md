@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: page.njk
 title: "NABH Accreditation Success: Complete Roadmap 2024 | JP Consultancy"
 description: "Step-by-step guide to NABH accreditation success. Expert insights on gap analysis, documentation, staff training, and quality improvement strategies for healthcare organizations."
 keywords: "nabh accreditation consultants, nabh consultant, nabh accreditation process, nabh consultancy, healthcare quality improvement consultant, nabh accreditation roadmap, nabh standards implementation"

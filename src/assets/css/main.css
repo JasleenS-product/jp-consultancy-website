@@ -1603,7 +1603,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('/assets/images/Hero.jpg') center/cover;
+    background: url('/assets/images/contact-hero-banner.jpg') center/cover;
     opacity: 0.25;
     z-index: 0;
 }
@@ -1893,7 +1893,7 @@ body:has(.contact-modern-section) .page-hero {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('/assets/images/Hero.jpg') center/cover;
+    background: url('/assets/images/contact-hero-banner.jpg') center/cover;
     opacity: 0.1;
     z-index: 0;
 }
@@ -4628,7 +4628,7 @@ body[data-page="tourism"] .service-hero,
         rgba(31, 95, 255, 0.9) 0%, 
         rgba(59, 130, 246, 0.85) 50%, 
         rgba(37, 99, 235, 0.9) 100%
-    ), url('/assets/images/Hero.jpg');
+    ), url('/assets/images/contact-hero-banner.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

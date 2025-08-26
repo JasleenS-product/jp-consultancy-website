@@ -1,5 +1,5 @@
 ---
-layout: layouts/home.njk
+layout: home.njk
 title: "Best Healthcare Consultancy in India | JP Consultancy"
 description: "Leading hospital consultants in India offering hospital planning, design, operations & accreditation services. Trusted by 50+ healthcare clients."
 keywords: "healthcare consultancy india, best hospital consultants in india, hospital planning, cheapest hospital plan"
