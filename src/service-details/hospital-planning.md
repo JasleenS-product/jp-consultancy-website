@@ -3,10 +3,11 @@ layout: service-detail.njk
 title: "Hospital Planning & Design Services | JP Consultancy"
 description: "End-to-end hospital planning, NABH layouts, and architectural design. Cost-effective hospital plans tailored to facility size and compliance needs."
 keywords: "hospital planning, hospital design services, cheapest hospital plan, hospital plan prices, hospital architecture design & planning"
+approach_background: "/assets/images/Approach 6.jpg"
 hero:
   title: "Hospital Planning & Design Services in India"
   subtitle: "Strategic, NABH-compliant, and patient-focused hospital planning solutions tailored to every scale, delivering affordable hospital design and architecture across India"
-  background: "/assets/images/Hero.jpg"
+  background: "/assets/images/Hospital Planning & Design.jpg"
 why_choose:
   title: "Why Choose JP Consultancy for Hospital Planning & Design"
   points:
@@ -106,4 +107,4 @@ cta:
     - text: "Schedule a Call"
       link: "/contact"
       style: "secondary" 
-approach_background: "/assets/images/Approach.jpg" 
+--- 

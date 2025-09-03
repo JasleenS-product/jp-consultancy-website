@@ -10,7 +10,7 @@
     <link rel="icon" type="image/svg+xml" href="/assets/icons/JP CONSULTANCY SVG.svg">
     
     <!-- CSS with cache-busting query string -->
-    <link rel="stylesheet" href="/assets/css/main.css?v=1.0.1">
+    <link rel="stylesheet" href="/assets/css/main.css?v=106.0.0">
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="service-detail-page">
     <!-- Contact Ribbon -->
     <div class="contact-ribbon">
       <div class="container contact-ribbon-inner" style="justify-content: flex-start;">
@@ -66,31 +66,39 @@
     <main>
         
         <!-- Page Hero Section -->
-        <section class="service-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ hero.background }}')">
+        <section class="service-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ hero.background }}') !important; min-height: 75vh !important; background-size: cover !important; background-position: center !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 5rem 0 !important;">
             <div class="container">
-                <div class="service-hero-content">
-                    <h1>{{ hero.title }}</h1>
-                    <p>{{ hero.subtitle }}</p>
+                <div class="service-hero-content" style="position: relative !important; z-index: 3 !important; max-width: 1200px !important; margin: 0 auto !important; padding: 0 2rem !important; text-align: center !important;">
+                    <h1 style="font-size: 4rem !important; font-weight: 700 !important; color: white !important; margin-bottom: 2rem !important; text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;">{{ hero.title }}</h1>
+                    <p style="font-size: 1.3rem !important; font-weight: 400 !important; color: rgba(255, 255, 255, 0.95) !important; margin-bottom: 0 !important; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;">{{ hero.subtitle }}</p>
                 </div>
             </div>
         </section>
 
         <!-- Why Choose Section -->
         {% if why_choose %}
-        <section class="why-choose-section">
+        <section class="why-choose-section" style="background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)), url('/assets/images/grid-service3.jpg') !important; background-size: cover !important; background-position: center !important; background-attachment: fixed !important; padding: 2rem 0 !important; display: block !important; margin: 1rem 0 !important;">
             <div class="container">
-                <div class="section-header fade-in-up">
-                    <h2>{{ why_choose.title }}</h2>
-                    <p>Expert Solutions for Healthcare Excellence</p>
+                <div class="section-header">
+                    <h2 style="color: #0f172a !important; font-size: 2.5rem !important; font-weight: 700 !important; text-align: center !important; margin-bottom: 0.3rem !important; display: inline-block !important; padding: 0.4rem 0.9rem !important; border-radius: 12px !important; background: rgba(255,255,255,0.7) !important; backdrop-filter: blur(6px) !important; -webkit-backdrop-filter: blur(6px) !important; box-shadow: 0 6px 24px rgba(0,0,0,0.18) !important;">{{ why_choose.title }}</h2>
+                    <p style="color: #0f172a !important; font-size: 1.2rem !important; text-align: center !important; margin-bottom: 0.5rem !important; display: inline-block !important; padding: 0.25rem 0.8rem !important; border-radius: 9999px !important; background: rgba(255,255,255,0.7) !important; backdrop-filter: blur(6px) !important; -webkit-backdrop-filter: blur(6px) !important; box-shadow: 0 6px 20px rgba(0,0,0,0.16) !important;">Expert Solutions for Healthcare Excellence</p>
                 </div>
-                <div class="why-choose-grid custom-why-choose-grid">
+                <div style="background: #f8fafc !important; display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 0.6rem !important; margin-top: 0.2rem !important; padding: 0.4rem !important; border-radius: 16px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;">
                     {% for point in why_choose.points %}
-                    <div class="why-choose-card custom-why-choose-card fade-in-up animate-delay-{{ loop.index }}00">
-                        <div class="why-choose-icon custom-why-choose-icon">
-                            <img src="/assets/icons/service-icon.svg" alt="Why Choose Us Icon">
+                    <div style="background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%) !important; padding: 2.5rem 1.8rem !important; border: 1px solid #e2e8f0 !important; display: block !important; min-height: 200px !important; border-radius: 12px !important; box-shadow: 0 4px 15px rgba(31,95,255,0.06) !important; transition: all 0.3s ease !important; position: relative !important; overflow: hidden !important;">
+                        <!-- Top accent line -->
+                        <div style="position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; height: 3px !important; background: linear-gradient(90deg, #3b82f6, #8b5cf6) !important;"></div>
+                        
+                        <!-- Larger tick icon without circle background -->
+                        <div style="display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 auto 0.8rem auto !important; width: 50px !important; height: 50px !important;">
+                            <img src="/assets/icons/service-icon.svg" alt="{{ point.title }} Icon" style="width: 40px !important; height: 40px !important;">
                         </div>
-                        <h3>{{ point.title }}</h3>
-                        <p>{{ point.description }}</p>
+                        
+                        <h3 style="color: #1e293b !important; font-size: 1.1rem !important; font-weight: 700 !important; margin-bottom: 0.6rem !important; text-align: center !important; line-height: 1.3 !important;">{{ point.title }}</h3>
+                        <p style="color: #64748b !important; font-size: 0.9rem !important; text-align: center !important; line-height: 1.4 !important; margin: 0 !important;">{{ point.description }}</p>
+                        
+                        <!-- Bottom accent dot -->
+                        <div style="position: absolute !important; bottom: 0.6rem !important; left: 50% !important; transform: translateX(-50%) !important; width: 6px !important; height: 6px !important; background: #3b82f6 !important; border-radius: 50% !important;"></div>
                     </div>
                     {% endfor %}
                 </div>
@@ -104,7 +112,7 @@
             <div class="container">
                 <div class="section-header fade-in-up">
                     <h2>{{ core_services.title }}</h2>
-                    <p>Comprehensive Healthcare Solutions</p>
+                    <p style="color: white !important;">Comprehensive Healthcare Solutions</p>
                 </div>
                 
                 <!-- Core Services Matrix Grid -->
@@ -167,9 +175,6 @@
                 <div class="deliverables-scroll">
                     {% for item in deliverables.items %}
                     <div class="deliverable-card scale-in animate-delay-{{ loop.index }}00">
-                        <div class="deliverable-icon">
-                            <img src="/assets/icons/{{ item.icon }}.svg" alt="{{ item.title }}" onerror="this.style.display='none'">
-                        </div>
                         <h3>{{ item.title }}</h3>
                         <p>{{ item.description }}</p>
                     </div>

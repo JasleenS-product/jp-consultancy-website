@@ -30,7 +30,7 @@
     <link rel="icon" type="image/svg+xml" href="/assets/icons/JP CONSULTANCY SVG.svg">
     
     <!-- CSS with cache-busting query string -->
-    <link rel="stylesheet" href="/assets/css/main.css?v=105.0.0">
+    <link rel="stylesheet" href="/assets/css/main.css?v=106.0.0">
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -67,8 +67,7 @@
                         <a href="/service-details/tourism">Medical Tourism</a>
                     </div>
                 </div>
-                <a href="/projects.html" class="nav-link {% if '/projects' in page.url %}active{% endif %}">Projects</a>
-                <a href="/blogs" class="nav-link {% if '/blogs' in page.url %}active{% endif %}">Blogs</a>
+                <a href="/projects/" class="nav-link {% if '/projects' in page.url %}active{% endif %}">Projects</a>
                 <a href="/about" class="nav-link {% if '/about' in page.url %}active{% endif %}">About</a>
                 <a href="/contact" class="nav-link {% if '/contact' in page.url %}active{% endif %}">Contact</a>
             </div>
@@ -102,7 +101,7 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/projects.html">Projects</a></li>
+                        <li><a href="/projects/">Projects</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
@@ -138,6 +137,38 @@
 
     <!-- JavaScript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Mobile Navigation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                const navLinks = navMenu.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
     <script src="/assets/js/script.js"></script>
     
     <!-- Initialize AOS -->

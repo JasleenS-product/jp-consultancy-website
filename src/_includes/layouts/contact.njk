@@ -123,12 +123,15 @@
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 2px solid #e9ecef;
 }
 
 .contact-form-section h2 {
     color: #2c3e50;
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
 }
 
 .contact-form {
@@ -146,22 +149,29 @@
 .form-group {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .form-group label {
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #2c3e50;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+    color: #333;
+    font-family: 'Inter', sans-serif;
 }
 
 .form-group input:focus,
@@ -169,23 +179,79 @@
 .form-group textarea:focus {
     outline: none;
     border-color: #3498db;
-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    background-color: white;
+    transform: translateY(-1px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.form-group select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
 }
 
 .btn-primary {
-    background: #3498db;
+    background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+    margin-top: 1rem;
 }
 
 .btn-primary:hover {
-    background: #2980b9;
+    background: linear-gradient(135deg, #2980b9, #1f5f8b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+}
+
+/* Required field indicator */
+.form-group label[for*="name"]::after,
+.form-group label[for*="email"]::after,
+.form-group label[for*="message"]::after {
+    content: " *";
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Form validation styles */
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+    border-color: #27ae60;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -205,6 +271,13 @@
     
     .contact-hero p {
         font-size: 1.1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.875rem;
+        font-size: 16px; /* Prevents zoom on iOS */
     }
 }
 </style>
@@ -243,22 +316,22 @@
     <form class="contact-form" action="#" method="POST">
       <div class="form-row">
         <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" required>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
         </div>
         <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone">
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
         </div>
         <div class="form-group">
           <label for="organization">Organization</label>
-          <input type="text" id="organization" name="organization">
+          <input type="text" id="organization" name="organization" placeholder="Enter your organization name">
         </div>
       </div>
       <div class="form-group">
@@ -275,8 +348,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us about your project or inquiry..." required></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Send Message</button>
     </form>

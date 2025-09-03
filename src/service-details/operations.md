@@ -3,10 +3,11 @@ layout: service-detail.njk
 title: "Hospital Operations Consulting India | JP Consultancy"
 description: "Improve hospital operations, patient experience, and revenue. Strategic consulting for empanelments, TPA tie-ups & quality process improvement."
 keywords: "hospital operations consulting, hospital operations consulting, patient satisfaction surveys"
+approach_background: "/assets/images/Approach 7.jpg"
 hero:
   title: "Hospital Operations Consulting Services"
   subtitle: "Elevating healthcare delivery through expert hospital operations consulting, patient satisfaction strategies, and efficiency-driven system redesign."
-  background: "/assets/images/background service.jpg"
+  background: "/assets/images/Hospital Operations.jpg"
 why_choose:
   title: "Why Choose JP Consultancy for Hospital Operations"
   points:
