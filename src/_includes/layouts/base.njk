@@ -30,7 +30,13 @@
     <link rel="icon" type="image/svg+xml" href="/assets/icons/JP CONSULTANCY SVG.svg">
     
     <!-- CSS with cache-busting query string -->
-    <link rel="stylesheet" href="/assets/css/main.css?v=106.0.0">
+    <link rel="stylesheet" href="/assets/css/main.css?v=130.0.0">
+    <style>
+      /* Force-mobile preview (only when body has .force-mobile) */
+      body.force-mobile .mobile-menu-toggle { display: flex !important; }
+      body.force-mobile .nav-menu { display: none !important; }
+      body.force-mobile .nav-menu.active { display: flex !important; }
+    </style>
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -42,9 +48,9 @@
     <!-- Contact Ribbon -->
     <div class="contact-ribbon">
       <div class="container contact-ribbon-inner">
-        <span><strong>Phone:</strong> <a href="tel:+919819655543">+91 98196 55543</a></span>
+        <span><strong>Phone:</strong> <a href="tel:+919819945543">+91 9819945543</a></span>
         <span class="ribbon-sep">|</span>
-        <span><strong>Email:</strong> <a href="mailto:jpconsultancy@gmail.com">jpconsultancy@gmail.com</a></span>
+        <span><strong>Email:</strong> <a href="mailto:Info.jpconsultant@gmail.com">Info.jpconsultant@gmail.com</a></span>
       </div>
     </div>
     <!-- Navigation -->
@@ -72,11 +78,11 @@
                 <a href="/contact" class="nav-link {% if '/contact' in page.url %}active{% endif %}">Contact</a>
             </div>
             
-            <div class="nav-toggle" id="nav-toggle">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </div>
 
@@ -122,8 +128,8 @@
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <div class="contact-info">
-                        <p><strong>Phone:</strong> +91 98196 55543</p>
-                        <p><strong>Email:</strong> jpconsultancy@gmail.com</p>
+                        <p><strong>Phone:</strong> +91 9819945543</p>
+                        <p><strong>Email:</strong> Info.jpconsultant@gmail.com</p>
                         <p><strong>Address:</strong> 1st Floor, Jayraj Bhuvan, New Mill Road, Kurla West, Mumbai – 400070</p>
                     </div>
                 </div>
@@ -138,38 +144,59 @@
     <!-- JavaScript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Mobile Navigation Script -->
+    <!-- Mobile Navigation Script (force-mobile only; handlers in script.js) -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-            
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    navToggle.classList.toggle('active');
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                    }
-                });
-                
-                // Close menu when clicking on a link
-                const navLinks = navMenu.querySelectorAll('.nav-link');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                    });
-                });
-            }
+            try {
+              const params = new URLSearchParams(window.location.search);
+              if (params.get('m') === '1') {
+                document.body.classList.add('force-mobile');
+              }
+            } catch (e) {}
         });
     </script>
     <script src="/assets/js/script.js"></script>
+    
+    <!-- Mobile Services Submenu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const servicesDropdown = document.querySelector('.nav-dropdown');
+            const servicesLink = servicesDropdown ? servicesDropdown.querySelector('.nav-link') : null;
+            
+            // Mobile menu toggle
+            if (mobileMenuToggle && navMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+            }
+            
+            // Services submenu toggle for mobile ONLY
+            if (servicesLink && servicesDropdown) {
+                servicesLink.addEventListener('click', function(e) {
+                    // Check if we're on mobile and menu is active
+                    if (window.innerWidth <= 768 && navMenu && navMenu.classList.contains('active')) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        servicesDropdown.classList.toggle('active');
+                    }
+                });
+            }
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (navMenu && navMenu.classList.contains('active')) {
+                    if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-toggle')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        if (servicesDropdown) servicesDropdown.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
     
     <!-- Initialize AOS -->
     <script>

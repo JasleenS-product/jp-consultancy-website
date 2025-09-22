@@ -1,69 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <meta name="description" content="{{ description }}">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/JP CONSULTANCY SVG.svg">
-    
-    <!-- CSS with cache-busting query string -->
-    <link rel="stylesheet" href="/assets/css/main.css?v=106.0.0">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body class="service-detail-page">
-    <!-- Contact Ribbon -->
-    <div class="contact-ribbon">
-      <div class="container contact-ribbon-inner" style="justify-content: flex-start;">
-        <span><strong>Phone:</strong> <a href="tel:+919819655543">+91 98196 55543</a></span>
-        <span class="ribbon-sep">|</span>
-        <span><strong>Email:</strong> <a href="mailto:jpconsultancy@gmail.com">jpconsultancy@gmail.com</a></span>
-      </div>
-    </div>
+{% extends "layouts/base.njk" %}
 
-    <!-- Navigation -->
-    <div class="navbar">
-        <div class="container">
-            <a href="/" class="nav-brand">
-                <img src="/assets/icons/JP CONSULTANCY SVG.svg" alt="JP Consultancy Logo" class="logo"/>
-            </a>
-            
-            <div class="nav-menu" id="nav-menu">
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-dropdown">
-                    <a href="#" class="nav-link active">Services</a>
-                    <div class="dropdown-content simple-dropdown">
-                        <a href="/service-details/hospital-planning">Hospital Planning & Design</a>
-                        <a href="/service-details/equipment">Hospital Equipment Planning</a>
-                        <a href="/service-details/quality">Quality and Accreditation</a>
-                        <a href="/service-details/training">Health Training</a>
-                        <a href="/service-details/operations">Hospital Operations</a>
-                        <a href="/service-details/tourism">Medical Tourism</a>
-                    </div>
-                </div>
-                <a href="/projects.html" class="nav-link">Projects</a>
-                <a href="/about" class="nav-link">About</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </div>
-            
-            <div class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="service-detail">
-    <main>
+{% block content %}
+<div class="service-detail">
         
         <!-- Page Hero Section -->
         <section class="service-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ hero.background }}') !important; min-height: 75vh !important; background-size: cover !important; background-position: center !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 5rem 0 !important;">
@@ -83,7 +21,7 @@
                     <h2 style="color: #0f172a !important; font-size: 2.5rem !important; font-weight: 700 !important; text-align: center !important; margin-bottom: 0.3rem !important; display: inline-block !important; padding: 0.4rem 0.9rem !important; border-radius: 12px !important; background: rgba(255,255,255,0.7) !important; backdrop-filter: blur(6px) !important; -webkit-backdrop-filter: blur(6px) !important; box-shadow: 0 6px 24px rgba(0,0,0,0.18) !important;">{{ why_choose.title }}</h2>
                     <p style="color: #0f172a !important; font-size: 1.2rem !important; text-align: center !important; margin-bottom: 0.5rem !important; display: inline-block !important; padding: 0.25rem 0.8rem !important; border-radius: 9999px !important; background: rgba(255,255,255,0.7) !important; backdrop-filter: blur(6px) !important; -webkit-backdrop-filter: blur(6px) !important; box-shadow: 0 6px 20px rgba(0,0,0,0.16) !important;">Expert Solutions for Healthcare Excellence</p>
                 </div>
-                <div style="background: #f8fafc !important; display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 0.6rem !important; margin-top: 0.2rem !important; padding: 0.4rem !important; border-radius: 16px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;">
+                <div class="why-choose-grid-mobile" style="background: #f8fafc !important; display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 0.6rem !important; margin-top: 0.2rem !important; padding: 0.4rem !important; border-radius: 16px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;" data-mobile-grid="2x2">
                     {% for point in why_choose.points %}
                     <div style="background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%) !important; padding: 2.5rem 1.8rem !important; border: 1px solid #e2e8f0 !important; display: block !important; min-height: 200px !important; border-radius: 12px !important; box-shadow: 0 4px 15px rgba(31,95,255,0.06) !important; transition: all 0.3s ease !important; position: relative !important; overflow: hidden !important;">
                         <!-- Top accent line -->
@@ -115,21 +53,61 @@
                     <p style="color: white !important;">Comprehensive Healthcare Solutions</p>
                 </div>
                 
-                <!-- Core Services Matrix Grid -->
+                <!-- Core Services Matrix Grid (symmetrical rows of 3) -->
                 <div class="core-services-matrix">
-                    {% for service in core_services.services %}
-                    <div class="matrix-item matrix-{{ service.type }} {% if service.type == 'text' %}fade-in-left{% else %}fade-in-right{% endif %} animate-delay-{{ loop.index }}00">
-                        {% if service.type == "text" %}
-                        <div class="service-card">
-                            <h3>{{ service.title }}</h3>
-                            <p>{{ service.description }}</p>
-                        </div>
-                        {% elif service.type == "image" %}
-                        <div class="service-image">
-                            <img src="{{ service.image }}" alt="{{ service.alt }}" loading="lazy">
-                        </div>
+                    {% set services = core_services.services %}
+                    {% for i in range(0, services | length, 3) %}
+                        {% set a = services[i] %}
+                        {% set b = services[i + 1] if (i + 1) < (services | length) %}
+                        {% set c = services[i + 2] if (i + 2) < (services | length) %}
+
+                        {% set textCount = 0 %}
+                        {% if a is defined and a.type == 'text' %}{% set textCount = textCount + 1 %}{% endif %}
+                        {% if b is defined and b.type == 'text' %}{% set textCount = textCount + 1 %}{% endif %}
+                        {% if c is defined and c.type == 'text' %}{% set textCount = textCount + 1 %}{% endif %}
+
+                        {% macro render_item(item, idx) %}
+                            <div class="matrix-item matrix-{{ item.type }} {% if item.type == 'text' %}fade-in-left{% else %}fade-in-right{% endif %} animate-delay-{{ idx }}00">
+                                {% if item.type == 'text' %}
+                                <div class="service-card">
+                                    <h3>{{ item.title }}</h3>
+                                    <p>{{ item.description }}</p>
+                                </div>
+                                {% else %}
+                                <div class="service-image">
+                                    <img src="{{ item.image }}" alt="{{ item.alt }}" loading="lazy">
+                                </div>
+                                {% endif %}
+                            </div>
+                        {% endmacro %}
+
+                        {% if textCount == 1 %}
+                            {# Pattern: Image | Text | Image #}
+                            {# find the single text item and ensure it is rendered in the middle #}
+                            {% set textItem = a if a is defined and a.type == 'text' else (b if b is defined and b.type == 'text' else c) %}
+                            {% set img1 = a if a is defined and a.type == 'image' else (b if b is defined and b.type == 'image' else c) %}
+                            {% set img2 = (c if c is defined and c.type == 'image' else (b if b is defined and b.type == 'image' and b != img1 else (a if a is defined and a.type == 'image' and a != img1 else undefined))) %}
+
+                            {% if img1 is defined %}{{ render_item(img1, i + 1) }}{% endif %}
+                            {% if textItem is defined %}{{ render_item(textItem, i + 2) }}{% endif %}
+                            {% if img2 is defined %}{{ render_item(img2, i + 3) }}{% endif %}
+
+                        {% elif textCount == 2 %}
+                            {# Pattern: Text | Image | Text #}
+                            {% set imgItem = a if a is defined and a.type == 'image' else (b if b is defined and b.type == 'image' else c) %}
+                            {% set t1 = a if a is defined and a.type == 'text' else (b if b is defined and b.type == 'text' else c) %}
+                            {% set t2 = (c if c is defined and c.type == 'text' and c != t1 else (b if b is defined and b.type == 'text' and b != t1 else (a if a is defined and a.type == 'text' and a != t1 else undefined))) %}
+
+                            {% if t1 is defined %}{{ render_item(t1, i + 1) }}{% endif %}
+                            {% if imgItem is defined %}{{ render_item(imgItem, i + 2) }}{% endif %}
+                            {% if t2 is defined %}{{ render_item(t2, i + 3) }}{% endif %}
+
+                        {% else %}
+                            {# Default: render in given order #}
+                            {% if a is defined %}{{ render_item(a, i + 1) }}{% endif %}
+                            {% if b is defined %}{{ render_item(b, i + 2) }}{% endif %}
+                            {% if c is defined %}{{ render_item(c, i + 3) }}{% endif %}
                         {% endif %}
-                    </div>
                     {% endfor %}
                 </div>
             </div>
@@ -170,7 +148,7 @@
             <div class="container">
                 <div class="section-header fade-in-up">
                     <h2>{{ deliverables.title }}</h2>
-                    <p>Complete Project Deliverables</p>
+                    <p style="color: white;">Complete Project Deliverables</p>
                 </div>
                 <div class="deliverables-scroll">
                     {% for item in deliverables.items %}
@@ -215,66 +193,63 @@
         </section>
         {% endif %}
 
-    </main>
-    </div>
+</div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
-                        <img src="/assets/icons/JP CONSULTANCY SVG.svg" alt="JP Consultancy" class="footer-logo">
-                        <p>Your partners in organizational transformation journey. We don't provide expert solutions. We help you find them.</p>
-                    </div>
-                </div>
+<!-- JavaScript Solution for Mobile 2x2 Grid -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function updateGrid() {
+        const grid = document.querySelector('[data-mobile-grid="2x2"]');
+        if (grid) {
+            if (window.innerWidth <= 768) {
+                // Mobile: 2x2 layout
+                grid.style.setProperty('grid-template-columns', 'repeat(2, 1fr)', 'important');
+                grid.style.setProperty('grid-template-rows', 'auto auto', 'important');
+                grid.style.setProperty('gap', '0.5rem', 'important');
+                grid.style.setProperty('padding', '0.3rem', 'important');
                 
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/projects.html">Projects</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </div>
+                // Update card styles for mobile
+                const cards = grid.querySelectorAll('> div');
+                cards.forEach(card => {
+                    card.style.setProperty('padding', '1.5rem 1rem', 'important');
+                    card.style.setProperty('min-height', '180px', 'important');
+                    card.style.setProperty('font-size', '0.8rem', 'important');
+                    
+                    const h3 = card.querySelector('h3');
+                    if (h3) {
+                        h3.style.setProperty('font-size', '0.95rem', 'important');
+                        h3.style.setProperty('margin-bottom', '0.4rem', 'important');
+                    }
+                });
+            } else {
+                // Desktop: 4x1 layout
+                grid.style.setProperty('grid-template-columns', 'repeat(4, 1fr)', 'important');
+                grid.style.setProperty('grid-template-rows', 'auto', 'important');
+                grid.style.setProperty('gap', '0.6rem', 'important');
+                grid.style.setProperty('padding', '0.4rem', 'important');
                 
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="/service-details/hospital-planning">Hospital Planning & Design</a></li>
-                        <li><a href="/service-details/equipment">Hospital Equipment Planning</a></li>
-                        <li><a href="/service-details/quality">Quality and Accreditation</a></li>
-                        <li><a href="/service-details/training">Health Training</a></li>
-                        <li><a href="/service-details/operations">Hospital Operations</a></li>
-                        <li><a href="/service-details/tourism">Medical Tourism</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <div class="footer-contact">
-                        <p><strong>Phone:</strong> <a href="tel:+919819655543">+91 98196 55543</a></p>
-                        <p><strong>Email:</strong> <a href="mailto:jpconsultancy@gmail.com">jpconsultancy@gmail.com</a></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 JP Consultancy. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+                // Reset card styles for desktop
+                const cards = grid.querySelectorAll('> div');
+                cards.forEach(card => {
+                    card.style.setProperty('padding', '2.5rem 1.8rem', 'important');
+                    card.style.setProperty('min-height', '200px', 'important');
+                    card.style.removeProperty('font-size');
+                    
+                    const h3 = card.querySelector('h3');
+                    if (h3) {
+                        h3.style.removeProperty('font-size');
+                        h3.style.removeProperty('margin-bottom');
+                    }
+                });
+            }
+        }
+    }
 
-    <!-- JavaScript -->
-    <script src="/assets/js/script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-    </script>
-</body>
-</html> 
+    // Initial call
+    updateGrid();
+    
+    // Update on window resize
+    window.addEventListener('resize', updateGrid);
+});
+</script>
+{% endblock %} 

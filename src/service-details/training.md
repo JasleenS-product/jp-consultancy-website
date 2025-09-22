@@ -44,4 +44,22 @@ core_services:
     - type: "image"
       image: "/assets/images/grid-service3.jpg"
       alt: "Ops & Admin"
+deliverables:
+  title: "What You Get With Our Health Training Services"
+  items:
+    - title: "Training Needs Assessment"
+      description: "Baseline competency mapping and role-based training plan"
+      icon: "assessment"
+    - title: "Customized Modules"
+      description: "Department-specific modules with facilitator guides and handouts"
+      icon: "programs"
+    - title: "On-site Workshops"
+      description: "Interactive sessions with simulations and practical demonstrations"
+      icon: "training"
+    - title: "Assessment & Certification"
+      description: "Pre/post tests, skill checklists, and participation certificates"
+      icon: "certificates"
+    - title: "Post-Training Follow-up"
+      description: "Action plans, refresher schedules, and impact evaluation metrics"
+      icon: "monitoring"
 --- 

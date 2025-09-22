@@ -50,4 +50,22 @@ core_services:
     - type: "image"
       image: "/assets/images/grid-service4.jpg"
       alt: "Documentation"
+deliverables:
+  title: "What You Get With Our Quality & Accreditation Services"
+  items:
+    - title: "Gap Assessment Report"
+      description: "Detailed gap analysis against NABH/NABL standards with prioritized action items"
+      icon: "assessment"
+    - title: "Policy & SOP Compendium"
+      description: "Complete set of customized policies, procedures, and documentation templates"
+      icon: "sops"
+    - title: "Internal Audit Toolkit"
+      description: "Audit checklists, CAPA tracker, and audit schedule for sustained compliance"
+      icon: "audit"
+    - title: "Training Calendar"
+      description: "Department-wise training plan, materials, and competency assessment sheets"
+      icon: "training"
+    - title: "Certification Readiness Dossier"
+      description: "Submission pack with evidence mapping and mock-audit readiness score"
+      icon: "certification"
 --- 

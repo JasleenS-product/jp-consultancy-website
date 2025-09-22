@@ -44,6 +44,24 @@ core_services:
     - type: "image"
       image: "/assets/images/grid-service1.jpg"
       alt: "Patient Journey"
+deliverables:
+  title: "What You Get With Our Medical Tourism Services"
+  items:
+    - title: "Market & Channel Plan"
+      description: "Target geographies, partner list, and acquisition strategy"
+      icon: "projection"
+    - title: "Partner Network Kit"
+      description: "MOUs, referral workflows, and performance tracking sheets"
+      icon: "partner"
+    - title: "Patient Journey Playbook"
+      description: "Concierge SOPs from visa support to discharge and follow-up"
+      icon: "practice"
+    - title: "Pricing & Packaging"
+      description: "Service bundles with transparent pricing and inclusions"
+      icon: "materials"
+    - title: "Compliance Checklist"
+      description: "International quality, safety, and data privacy compliance mapping"
+      icon: "compliance"
 ---
 
 ## Medical Tourism

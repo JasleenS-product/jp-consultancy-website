@@ -15,11 +15,11 @@
 <body>
     <!-- Contact Ribbon -->
     <div class="contact-ribbon">
-      <div class="container contact-ribbon-inner">
-        <span><strong>Phone:</strong> <a href="tel:+919819655543">+91 98196 55543</a></span>
-        <span class="ribbon-sep">|</span>
-        <span><strong>Email:</strong> <a href="mailto:jpconsultancy@gmail.com">jpconsultancy@gmail.com</a></span>
-      </div>
+        <div class="container contact-ribbon-inner">
+            <span><strong>Phone:</strong> <a href="tel:+919819945543">+91 9819945543</a></span>
+            <span class="ribbon-sep">|</span>
+            <span><strong>Email:</strong> <a href="mailto:Info.jpconsultant@gmail.com">Info.jpconsultant@gmail.com</a></span>
+        </div>
     </div>
     
     <!-- Navigation -->
@@ -43,15 +43,15 @@
                     </div>
                 </div>
                 <a href="/projects/" class="nav-link active">Projects</a>
-                <a href="/about" class="nav-link">About</a>
-                <a href="/contact" class="nav-link">Contact</a>
+                        <a href="/about" class="nav-link">About</a>
+                        <a href="/contact" class="nav-link">Contact</a>
             </div>
             
-            <div class="nav-toggle" id="nav-toggle">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </div>
 
@@ -415,8 +415,8 @@
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <div class="contact-info">
-                        <p><strong>Phone:</strong> +91 98196 55543</p>
-                        <p><strong>Email:</strong> jpconsultancy@gmail.com</p>
+                        <p><strong>Phone:</strong> +91 9819945543</p>
+                        <p><strong>Email:</strong> Info.jpconsultant@gmail.com</p>
                         <p><strong>Address:</strong> 1st Floor, Jayraj Bhuvan, New Mill Road, Kurla West, Mumbai – 400070</p>
                     </div>
                 </div>
@@ -431,36 +431,73 @@
     <!-- JavaScript -->
     <script src="/assets/js/script.js"></script>
     
-    <!-- Mobile Navigation Script -->
+    <!-- Services Dropdown Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-            
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    navToggle.classList.toggle('active');
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
+            const dropdown = document.querySelector('.nav-dropdown');
+            if (dropdown) {
+                dropdown.addEventListener('mouseenter', function() {
+                    const dropdownContent = dropdown.querySelector('.simple-dropdown');
+                    if (dropdownContent) {
+                        dropdownContent.style.display = 'block';
                     }
                 });
-                
-                // Close menu when clicking on a link
-                const navLinks = navMenu.querySelectorAll('.nav-link');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                    });
+                dropdown.addEventListener('mouseleave', function() {
+                    const dropdownContent = dropdown.querySelector('.simple-dropdown');
+                    if (dropdownContent) {
+                        dropdownContent.style.display = 'none';
+                    }
                 });
             }
         });
     </script>
+    
+    <!-- Mobile Navigation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const servicesDropdown = document.querySelector('.nav-dropdown');
+            const servicesLink = servicesDropdown ? servicesDropdown.querySelector('.nav-link') : null;
+            
+            if (mobileMenuToggle && navMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+                
+                // Services submenu toggle for mobile
+                if (servicesLink && servicesDropdown) {
+                    servicesLink.addEventListener('click', function(e) {
+                        // Only handle on mobile when menu is active
+                        if (window.innerWidth <= 768 && navMenu.classList.contains('active')) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            servicesDropdown.classList.toggle('active');
+                        }
+                    });
+                }
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        if (servicesDropdown) servicesDropdown.classList.remove('active');
+                    }
+                });
+                
+                // Close menu when clicking on a regular link (not Services)
+                const navLinks = navMenu.querySelectorAll('.nav-link:not(.nav-dropdown .nav-link)');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        if (servicesDropdown) servicesDropdown.classList.remove('active');
+                    });
+                });
+            }
+    });
+    </script>
 </body>
-</html>
+</html> 

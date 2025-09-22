@@ -172,25 +172,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Mobile navigation toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
+// Mobile navigation toggle - handled in base layout inline script
 
-if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-    });
-}
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (navMenu && navMenu.classList.contains('active')) {
-        if (!e.target.closest('.nav-menu') && !e.target.closest('.nav-toggle')) {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        }
+// Desktop dropdown functionality only - mobile handled in base layout
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown && window.innerWidth > 768) {
+        // Desktop hover functionality only
+        dropdown.addEventListener('mouseenter', function() {
+            const dropdownContent = dropdown.querySelector('.simple-dropdown');
+            if (dropdownContent) {
+                dropdownContent.style.display = 'block';
+            }
+        });
+        
+        dropdown.addEventListener('mouseleave', function() {
+            const dropdownContent = dropdown.querySelector('.simple-dropdown');
+            if (dropdownContent) {
+                dropdownContent.style.display = 'none';
+            }
+        });
     }
+});
+
+// Close mobile menu functionality - handled in base layout inline script
+
+// Close mobile menu when clicking on a link
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+    });
 });
 
 // Navbar scroll effect
@@ -641,51 +654,64 @@ function scrollTeamCarousel(direction) {
 document.addEventListener('DOMContentLoaded', function() {
     const projectCarousels = document.querySelectorAll('.image-carousel');
     projectCarousels.forEach(carousel => {
-        const images = carousel.querySelectorAll('.carousel-container img');
+        const container = carousel.querySelector('.carousel-container');
+        const images = container ? container.querySelectorAll('img') : [];
         const prevBtn = carousel.querySelector('.carousel-nav.prev');
         const nextBtn = carousel.querySelector('.carousel-nav.next');
-        const dots = carousel.querySelectorAll('.carousel-dots .dot');
+        const dotsWrap = carousel.querySelector('.carousel-dots');
+        let dots = carousel.querySelectorAll('.carousel-dots .dot');
         let currentIndex = 0;
 
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
+        if (!container || images.length === 0) return;
+
+        // Ensure container width accommodates all slides
+        container.style.width = `${images.length * 100}%`;
+
+        // Ensure dots count matches images
+        if (dotsWrap && dots.length !== images.length) {
+            dotsWrap.innerHTML = '';
+            images.forEach(() => {
+                const d = document.createElement('span');
+                d.className = 'dot';
+                dotsWrap.appendChild(d);
             });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
+            dots = carousel.querySelectorAll('.carousel-dots .dot');
         }
 
-        if (prevBtn && nextBtn) {
+        function update() {
+            const offset = -currentIndex * 100;
+            container.style.transform = `translateX(${offset}%)`;
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+        }
+
+        if (prevBtn) {
             prevBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
-                showImage(currentIndex);
-            });
-
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % images.length;
-                showImage(currentIndex);
+                update();
             });
         }
-
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                update();
+            });
+        }
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentIndex = index;
-                showImage(currentIndex);
+                update();
             });
         });
 
-        // Auto-advance carousel
+        // Auto-advance
         if (images.length > 1) {
             setInterval(() => {
                 currentIndex = (currentIndex + 1) % images.length;
-                showImage(currentIndex);
+                update();
             }, 5000);
         }
 
-        // Initialize first image
-        if (images.length > 0) {
-            showImage(0);
-        }
+        // Initialize
+        update();
     });
-}); 
+});
