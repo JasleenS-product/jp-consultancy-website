@@ -1,144 +1,645 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Future-Ready Hospital Operations | JP Consultancy</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      min-width: 100vw;
-      background: linear-gradient(135deg, #0a0f1c 0%, #1f2a44 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-family: 'IBM Plex Sans', sans-serif;
-      transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1);
-      opacity: 1;
-      animation: slideUpFromBottom 2s cubic-bezier(0.4,0,0.2,1);
-      position: relative;
-      overflow: hidden;
-    }
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 0;
-      background: rgba(20,24,40,0.45);
-      backdrop-filter: blur(24px) saturate(160%);
-      -webkit-backdrop-filter: blur(24px) saturate(160%);
-      pointer-events: none;
-    }
-    .splash-logo {
-      width: 600px;
-      height: auto;
-      margin-bottom: 2rem;
-      filter: drop-shadow(0 0 24px #fff) drop-shadow(0 0 32px #1f5fff88);
-      display: block;
-      object-fit: contain;
-      z-index: 1;
-    }
-    .splash-message {
-      font-size: 1.4rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      color: #fff;
-      text-shadow: 0 2px 12px rgba(31,95,255,0.12);
-      text-align: center;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.4;
-      max-width: 800px;
-      margin: 0 auto;
-      z-index: 1;
-    }
-    @keyframes slideUpFromBottom {
-      0% { transform: translateY(100vh); }
-      100% { transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(60px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes logoPop {
-      0% { opacity: 0; transform: translateY(60px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .fade-out {
-      opacity: 0 !important;
-      pointer-events: none;
-      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1);
-    }
-    .loader-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, #0a0f1c 0%, #1f2a44 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      transition: opacity 0.5s;
-    }
-    .loader-overlay.hide {
-      opacity: 0;
-      pointer-events: none;
-    }
-    .spinner {
-      width: 64px;
-      height: 64px;
-      border: 6px solid #fff3;
-      border-top: 6px solid #fff;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    @media (max-width: 600px) {
-      .splash-logo { width: 320px; height: auto; margin-bottom: 1.2rem; }
-      .splash-message { font-size: 1.1rem; max-width: 90vw; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Healthcare Consultancy in India | JP Consultancy</title>
+    <meta name="description" content="Leading hospital consultants in India offering hospital planning, design, operations &amp; accreditation services. Trusted by 50+ healthcare clients.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="healthcare consultancy india, best hospital consultants in india, hospital planning, cheapest hospital plan">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="JP Consultancy">
+    <link rel="canonical" href="https://www.jpconsultancy.in/home/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Best Healthcare Consultancy in India | JP Consultancy">
+    <meta property="og:description" content="Leading hospital consultants in India offering hospital planning, design, operations &amp; accreditation services. Trusted by 50+ healthcare clients.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jpconsultancy.in/home/">
+    <meta property="og:image" content="https://www.jpconsultancy.in/assets/images/og-image.jpg">
+    <meta property="og:site_name" content="JP Consultancy">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Best Healthcare Consultancy in India | JP Consultancy">
+    <meta name="twitter:description" content="Leading hospital consultants in India offering hospital planning, design, operations &amp; accreditation services. Trusted by 50+ healthcare clients.">
+    <meta name="twitter:image" content="https://www.jpconsultancy.in/assets/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/JP CONSULTANCY SVG.svg">
+    
+    <!-- CSS with cache-busting query string -->
+    <link rel="stylesheet" href="/assets/css/main.css?v=130.0.0">
+    <style>
+      /* Force-mobile preview (only when body has .force-mobile) */
+      body.force-mobile .mobile-menu-toggle { display: flex !important; }
+      body.force-mobile .nav-menu { display: none !important; }
+      body.force-mobile .nav-menu.active { display: flex !important; }
+    </style>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="loader-overlay" id="loader">
-    <div class="spinner"></div>
+    <!-- Contact Ribbon -->
+    <div class="contact-ribbon">
+      <div class="container contact-ribbon-inner">
+        <span><strong>Phone:</strong> <a href="tel:+919819945543">+91 9819945543</a></span>
+        <span class="ribbon-sep">|</span>
+        <span><strong>Email:</strong> <a href="mailto:Info.jpconsultant@gmail.com">Info.jpconsultant@gmail.com</a></span>
+      </div>
+    </div>
+    <!-- Navigation -->
+    <div class="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">
+                <img src="/assets/icons/JP CONSULTANCY SVG.svg" alt="JP Consultancy Logo" class="logo"/>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link ">Home</a>
+                <div class="nav-dropdown" style="position:relative;">
+                    <a href="#" class="nav-link ">Services</a>
+                    <div class="dropdown-content simple-dropdown">
+                        <a href="/service-details/hospital-planning">Hospital Planning & Design</a>
+                        <a href="/service-details/equipment">Hospital Equipment Planning</a>
+                        <a href="/service-details/quality">Quality and Accreditation</a>
+                        <a href="/service-details/training">Health Training</a>
+                        <a href="/service-details/operations">Hospital Operations</a>
+                        <a href="/service-details/tourism">Medical Tourism</a>
+                    </div>
+                </div>
+                <a href="/projects/" class="nav-link ">Projects</a>
+                <a href="/about" class="nav-link ">About</a>
+                <a href="/contact" class="nav-link ">Contact</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+<!-- Hero Section with Carousel and Floating Stats -->
+<section class="hero-section">
+  <div class="hero-carousel">
+    <!-- Slide 1 -->
+    <div class="hero-slide active" style="background-image: url('/assets/images/Hero.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Investing in the Future of Healthcare in India</h1>
+        <div class="hero-tagline">Your trusted partner in healthcare consultancy, hospital planning, and professional excellence across India</div>
+        <div class="hero-buttons">
+          <a href="/service-details/hospital-planning" class="btn btn-primary">Discover More</a>
+          <a href="/projects.html" class="btn btn-outline">View Projects</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide" style="background-image: url('/assets/images/hero2.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Designing World-Class Healthcare Facilities</h1>
+        <div class="hero-tagline">We collaborate with healthcare leaders to plan, design, and equip hospitals through strategic design, hospital architecture services, and affordable hospital planning solutions</div>
+        <div class="hero-buttons">
+          <a href="/service-details/equipment" class="btn btn-primary">Discover More</a>
+          <a href="/projects.html" class="btn btn-outline">View Projects</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide" style="background-image: url('/assets/images/hero3.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Visionary Design. Strategic Procurement. Lasting Impact.</h1>
+        <div class="hero-tagline">Transforming healthcare spaces with expert hospital consultancy, equipment planning, and end-to-end lifecycle management of medical devices</div>
+        <div class="hero-buttons">
+          <a href="/service-details/consultancy" class="btn btn-primary">Discover More</a>
+          <a href="/projects.html" class="btn btn-outline">View Projects</a>
+        </div>
+      </div>
+    </div>
+    <!-- Stats Overlay (always visible, below hero content) -->
+    <div class="hero-stats-overlay">
+      <div class="stat"><span class="stat-number">15+</span><span class="stat-label">Years in the Industry</span></div>
+      <div class="stat"><span class="stat-number">50+</span><span class="stat-label">Organizations Transformed</span></div>
+      <div class="stat"><span class="stat-number">100%</span><span class="stat-label">Client Satisfaction Rate</span></div>
+      <div class="stat"><span class="stat-number">Quality</span><span class="stat-label">Excellence delivered in every project</span></div>
+    </div>
   </div>
-  <div id="splash-content" style="opacity:0; pointer-events:none; transition: none; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
-    <img src="/assets/images/JP CONSULTANCY WHITE SVG.svg" alt="JP Consultancy Logo" class="splash-logo" />
-    <div class="splash-message">Building the Next Generation of Hospitals—Smarter, Safer, Future-Ready.</div>
+  <div class="carousel-indicators">
+    <span class="indicator active"></span>
+    <span class="indicator"></span>
+    <span class="indicator"></span>
   </div>
-  <script>
-    // Check if splash was already shown in this session
-    if (sessionStorage.getItem('splashShown')) {
-      // If already shown, redirect immediately
-      window.location.href = "/home";
-    } else {
-      // Mark splash as shown and proceed with animation
-      sessionStorage.setItem('splashShown', 'true');
+</section>
+
+<!-- Visual Divider/Background Play After Services -->
+<div class="section-divider">
+  <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="divider-svg">
+    <defs>
+      <linearGradient id="heroCurveGradient" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#1F5FFF" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#0F4CDB" stop-opacity="0.7"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z" fill="url(#heroCurveGradient)"/>
+  </svg>
+</div>
+
+<!-- Modern Services Section -->
+<section id="services" class="services-modern-section">
+  <div class="services-bg-blur"></div>
+  <div class="container">
+    <div class="services-header">
+      <h2>Our Core Services</h2>
+      <p>Comprehensive healthcare solutions tailored to your needs</p>
+    </div>
+    <div class="services-modern-grid">
       
-      setTimeout(function() {
-        document.getElementById('loader').classList.add('hide');
-        var splash = document.getElementById('splash-content');
-        splash.style.opacity = 1;
-        splash.style.pointerEvents = 'auto';
-        splash.style.transition = 'none';
-      }, 1750);
+      <div class="service-modern-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-modern-icon">
+          <div class="numbered-badge">1</div>
+        </div>
+        <h3>Hospital Planning &amp; Design</h3>
+        <p>360-degree NABH planning, evidence-based solutions, licensing, and regulatory compliance. Architectural design, facility planning, and commissioning support for healthcare facilities.</p>
+        <a href="/service-details/hospital-planning" class="service-modern-btn">Learn More &rarr;</a>
+      </div>
       
-      function goHome() {
-        document.body.classList.add('fade-out');
-        setTimeout(function() {
-          window.location.href = "/home";
-        }, 700);
-      }
+      <div class="service-modern-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-modern-icon">
+          <div class="numbered-badge">2</div>
+        </div>
+        <h3>Hospital Equipment Planning</h3>
+        <p>Strategic medical equipment planning and procurement</p>
+        <a href="/service-details/equipment" class="service-modern-btn">Learn More &rarr;</a>
+      </div>
       
-      setTimeout(goHome, 4750);
-      document.body.addEventListener('click', goHome);
-      document.body.addEventListener('touchstart', goHome);
-    }
-  </script>
+      <div class="service-modern-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-modern-icon">
+          <div class="numbered-badge">3</div>
+        </div>
+        <h3>Hospital Operations</h3>
+        <p>Patient experience, insurance partnerships, management consulting, and operational efficiency</p>
+        <a href="/service-details/operations" class="service-modern-btn">Learn More &rarr;</a>
+      </div>
+      
+      <div class="service-modern-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-modern-icon">
+          <div class="numbered-badge">4</div>
+        </div>
+        <h3>Quality and Accreditation</h3>
+        <p>NABH/NABL consulting, JCI accreditation, and specialized services for all healthcare facilities.</p>
+        <a href="/service-details/quality" class="service-modern-btn">Learn More &rarr;</a>
+      </div>
+      
+      <div class="service-modern-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-modern-icon">
+          <div class="numbered-badge">5</div>
+        </div>
+        <h3>Health Training</h3>
+        <p>Professional training: ACLS/BLS, First-Aid, Disaster Management, Communication Skills</p>
+        <a href="/service-details/training" class="service-modern-btn">Learn More &rarr;</a>
+      </div>
+      
+      <div class="service-modern-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-modern-icon">
+          <div class="numbered-badge">6</div>
+        </div>
+        <h3>Medical Tourism</h3>
+        <p>Comprehensive medical tourism combining modern treatments with traditional Ayurveda and alternative medicine therapies</p>
+        <a href="/service-details/tourism" class="service-modern-btn">Learn More &rarr;</a>
+      </div>
+      
+    </div>
+  </div>
+  <!-- SVG Icon Definitions (Phosphor Icons) -->
+  <svg style="display:none;">
+    <symbol id="ph-shield-check" viewBox="0 0 256 256"><path d="M128 24L40 56v58c0 80 80 118 80 118s80-38 80-118V56z"/><polyline points="104 128 128 152 176 104"/></symbol>
+    <symbol id="ph-buildings" viewBox="0 0 256 256"><rect x="40" y="96" width="176" height="120" rx="8"/><rect x="88" y="56" width="80" height="40" rx="8"/><rect x="120" y="16" width="16" height="40" rx="8"/></symbol>
+    <symbol id="ph-briefcase" viewBox="0 0 256 256"><rect x="32" y="72" width="192" height="144" rx="8"/><rect x="32" y="72" width="192" height="32" rx="8"/><path d="M80 72V56a8 8 0 0 1 8-8h80a8 8 0 0 1 8 8v16"/></symbol>
+    <symbol id="ph-airplane-tilt" viewBox="0 0 256 256"><path d="M224 128L32 128M128 32L128 224"/><polyline points="96 96 128 128 160 96"/></symbol>
+    <symbol id="ph-graduation-cap" viewBox="0 0 256 256"><path d="M32 128L128 64l96 64-96 64z"/><path d="M32 128v48a16 16 0 0 0 16 16h160a16 16 0 0 0 16-16v-48"/></symbol>
+    <symbol id="ph-stethoscope" viewBox="0 0 256 256"><circle cx="68" cy="188" r="28"/><circle cx="188" cy="188" r="28"/><path d="M68 160V56a12 12 0 0 1 12-12h96a12 12 0 0 1 12 12v104"/></symbol>
+  </svg>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Why Choose Us</h2>
+      <p>Discover what sets JP Consultancy apart in the healthcare consulting industry.</p>
+    </div>
+    <div class="why-choose-grid">
+      <div class="why-choose-card" data-aos="fade-up">
+        <h3>Proven Results</h3>
+        <p>We deliver measurable improvements in efficiency, quality, and patient satisfaction.</p>
+      </div>
+      <div class="why-choose-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Client-Centric Approach</h3>
+        <p>Our solutions are tailored to your unique needs and organizational goals.</p>
+      </div>
+      <div class="why-choose-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Decades of Experience</h3>
+        <p>Our team brings decades of combined experience in healthcare consulting.</p>
+      </div>
+      <div class="why-choose-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>End-to-End Solutions</h3>
+        <p>From planning to implementation, we support you at every stage of your journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modern Projects Section with Dynamic Data -->
+<section id="projects" class="projects-section-v2">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Featured Projects</h2>
+      <p>Transforming healthcare spaces across India</p>
+    </div>
+    <div class="projects-scroll-container">
+      <div class="projects-grid-v2">
+        
+        <div class="project-card-v2" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image-wrapper-v2">
+              <img src="/assets/images/carewell1.jpg" alt="Carewell Hospital" class="project-image-bg-v2">
+          </div>
+          <div class="project-content-v2">
+              <span class="project-catchy-v2">Quality &amp; Accreditation</span>
+              <h3>Carewell Hospital</h3>
+              <p class="project-location-v2">Mumbai, Maharashtra</p>
+              <p class="project-description-v2">250-bed facility with complete NABH quality standards implementation. Healthcare accreditation consulting and operational excellence programs achieving accreditation within targeted timeframe.</p>
+          </div>
+        </div>
+        
+        <div class="project-card-v2" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image-wrapper-v2">
+              <img src="/assets/images/NADL1.jpg" alt="Navjeevan Advanced Diagnostics" class="project-image-bg-v2">
+          </div>
+          <div class="project-content-v2">
+              <span class="project-catchy-v2">Diagnostic Center Setup</span>
+              <h3>Navjeevan Advanced Diagnostics</h3>
+              <p class="project-location-v2">Indore, Madhya Pradesh</p>
+              <p class="project-description-v2">NADL diagnostic center with advanced diagnostics and equipment setup. Technology integration and comprehensive diagnostic facility development.</p>
+          </div>
+        </div>
+        
+        <div class="project-card-v2" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-image-wrapper-v2">
+              <img src="/assets/images/SOMAIYA HOSPITAL.JPG" alt="Somaiya Hospital" class="project-image-bg-v2">
+          </div>
+          <div class="project-content-v2">
+              <span class="project-catchy-v2">Quality &amp; Accreditation</span>
+              <h3>Somaiya Hospital</h3>
+              <p class="project-location-v2">Mumbai, Maharashtra</p>
+              <p class="project-description-v2">556-bed multi-specialty hospital with NABH quality certification. Healthcare accreditation support and clinical excellence programs for comprehensive patient care.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="projects-cta-wrapper" data-aos="fade-up">
+      <a href="/projects.html" class="btn btn-primary">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- Approach Section with Image Right-Aligned -->
+<section class="approach-section">
+  <div class="container approach-flex">
+    <div class="approach-text">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Our Approach</h2>
+        <p>Client-oriented, quality-driven with end-to-end assistance</p>
+      </div>
+      <div class="approach-timeline">
+        
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-number">01</div>
+          <div class="timeline-content">
+            <h3>Assessment</h3>
+            <p>Comprehensive analysis of current state and requirements</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-number">02</div>
+          <div class="timeline-content">
+            <h3>Strategy</h3>
+            <p>Customized solutions aligned with your goals</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="timeline-number">03</div>
+          <div class="timeline-content">
+            <h3>Implementation</h3>
+            <p>Expert execution with continuous support</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="timeline-number">04</div>
+          <div class="timeline-content">
+            <h3>Optimization</h3>
+            <p>Ongoing improvement and excellence maintenance</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="approach-image" data-aos="fade-left">
+      <img src="/assets/images/Approach.jpg" alt="Our Approach" />
+    </div>
+  </div>
+</section>
+
+<!-- Our Expert Team Section -->
+<section class="team-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Our Expert Team</h2>
+      <p>Meet the professionals who drive excellence in healthcare consulting</p>
+    </div>
+    <div class="team-carousel-container">
+      <div class="team-carousel">
+        <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Dr. Vijayalakshmi Pandey</h3>
+          <p class="team-title">MANAGING DIRECTOR</p>
+          <p>Extensive clinical experience as a physician with a diploma in Hospital & Healthcare Management. Oversees consultancy operations with comprehensive knowledge of hospital processes and accreditation requirements.</p>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Dr. Ramkishor Pandey</h3>
+          <p class="team-title">ADVISOR</p>
+          <p>Seasoned expert in hospital operations and quality systems with over 15 years of hands-on experience in clinical governance, accreditation, and strategic hospital management.</p>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+          <h3>Mr. Rahul Pandey</h3>
+          <p class="team-title">HEAD OF OPERATIONS</p>
+          <p>Graduate in Commerce with extensive business experience. Manages business operations and client relationships, ensuring smooth delivery of consultancy services.</p>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+          <h3>Dr. Priya Sharma</h3>
+          <p class="team-title">QUALITY ASSURANCE SPECIALIST</p>
+          <p>Expert in NABH, JCI standards and quality management implementation with extensive experience in healthcare accreditation processes.</p>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="500">
+          <h3>Mr. Amit Kumar</h3>
+          <p class="team-title">HOSPITAL PLANNING CONSULTANT</p>
+          <p>Specialized in healthcare facility design and architectural planning with comprehensive understanding of hospital infrastructure requirements.</p>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="600">
+          <h3>Dr. Meera Patel</h3>
+          <p class="team-title">MEDICAL TOURISM COORDINATOR</p>
+          <p>Expert in international patient services and medical tourism strategies with focus on creating seamless patient experiences.</p>
+        </div>
+      </div>
+      <div class="team-nav-arrows">
+        <div class="team-nav-arrow prev" onclick="scrollTeamCarousel('left')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </div>
+        <div class="team-nav-arrow next" onclick="scrollTeamCarousel('right')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: 3rem;">
+      <a href="/about" class="btn btn-primary">Know More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section Curve SVG -->
+<svg class="team-curve-svg" viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="teamCurveGradient" x1="0" y1="0" x2="0" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1F5FFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0F4CDB" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,0 C480,70 960,0 1440,70 L1440,70 L0,70 Z" fill="url(#teamCurveGradient)"/>
+</svg>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section" style="background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('/assets/images/approach-background-homepage.jpg'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Client Testimonials</h2>
+      <p>What our clients say about our services</p>
+    </div>
+    <div class="testimonials-carousel">
+      
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-quote">
+          <p>"JP Consultancy has been instrumental in our NABH accreditation journey. Their systematic approach and expert guidance made the process seamless."</p>
+        </div>
+        <div class="testimonial-author">
+          <h4>Dr. P.K. Pandey</h4>
+          <p>Medical Director</p>
+          <p class="organization">National Hospital</p>
+        </div>
+      </div>
+      
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-quote">
+          <p>"Their comprehensive understanding of healthcare operations and quality standards transformed our facility completely."</p>
+        </div>
+        <div class="testimonial-author">
+          <h4>Dr. Rahul Srivastava</h4>
+          <p>CEO</p>
+          <p class="organization">Jaipur Healthcare Group</p>
+        </div>
+      </div>
+      
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="testimonial-quote">
+          <p>"The team&#39;s expertise in hospital planning and design helped us create an efficient, patient-centric facility."</p>
+        </div>
+        <div class="testimonial-author">
+          <h4>Ms. Divya Sharma</h4>
+          <p>Hospital Administrator</p>
+          <p class="organization">Divya Hospital</p>
+        </div>
+      </div>
+      
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="testimonial-quote">
+          <p>"Outstanding support in medical equipment planning. Their strategic approach saved us significant costs while ensuring quality."</p>
+        </div>
+        <div class="testimonial-author">
+          <h4>Dr. Sanjay Verma</h4>
+          <p>Director</p>
+          <p class="organization">Metro Healthcare Solutions</p>
+        </div>
+      </div>
+      
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="testimonial-quote">
+          <p>"The training programs conducted by JP Consultancy have significantly improved our staff&#39;s skills and patient care standards."</p>
+        </div>
+        <div class="testimonial-author">
+          <h4>Mrs. Anjali Desai</h4>
+          <p>HR Director</p>
+          <p class="organization">City Medical Center</p>
+        </div>
+      </div>
+      
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="testimonial-quote">
+          <p>"Their medical tourism coordination services helped us attract international patients and increase our revenue by 40%."</p>
+        </div>
+        <div class="testimonial-author">
+          <h4>Dr. Rajesh Khanna</h4>
+          <p>Medical Superintendent</p>
+          <p class="organization">International Medical Hub</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Bold Final Banner Section -->
+<section class="final-banner">
+  <div class="final-banner-content">
+    <h2>Ready to Transform Your Healthcare Facility?</h2>
+    <div class="final-banner-underline"></div>
+    <p>Let's discuss how we can help you achieve excellence in healthcare delivery.</p>
+    <a href="/contact" class="btn btn-accent btn-lg">Get Started Today</a>
+  </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/assets/icons/JP CONSULTANCY SVG.svg" alt="JP Consultancy" class="footer-logo">
+                        <p>Your partners in organizational transformation journey. We don't provide expert solutions. We help you 
+                find them.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects/">Projects</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="/service-details/hospital-planning">Hospital Planning & Design</a></li>
+                        <li><a href="/service-details/equipment">Hospital Equipment Planning</a></li>
+                        <li><a href="/service-details/quality">Quality and Accreditation</a></li>
+                        <li><a href="/service-details/training">Health Training</a></li>
+                        <li><a href="/service-details/operations">Hospital Operations</a></li>
+                        <li><a href="/service-details/tourism">Medical Tourism</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><strong>Phone:</strong> +91 9819945543</p>
+                        <p><strong>Email:</strong> Info.jpconsultant@gmail.com</p>
+                        <p><strong>Address:</strong> 1st Floor, Jayraj Bhuvan, New Mill Road, Kurla West, Mumbai – 400070</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> JP Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Mobile Navigation Script (force-mobile only; handlers in script.js) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+              const params = new URLSearchParams(window.location.search);
+              if (params.get('m') === '1') {
+                document.body.classList.add('force-mobile');
+              }
+            } catch (e) {}
+        });
+    </script>
+    <script src="/assets/js/script.js"></script>
+    
+    <!-- Mobile Services Submenu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const servicesDropdown = document.querySelector('.nav-dropdown');
+            const servicesLink = servicesDropdown ? servicesDropdown.querySelector('.nav-link') : null;
+            
+            // Mobile menu toggle
+            if (mobileMenuToggle && navMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+            }
+            
+            // Services submenu toggle for mobile ONLY
+            if (servicesLink && servicesDropdown) {
+                servicesLink.addEventListener('click', function(e) {
+                    // Check if we're on mobile and menu is active
+                    if (window.innerWidth <= 768 && navMenu && navMenu.classList.contains('active')) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        servicesDropdown.classList.toggle('active');
+                    }
+                });
+            }
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (navMenu && navMenu.classList.contains('active')) {
+                    if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-toggle')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        if (servicesDropdown) servicesDropdown.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
 </body>
 </html> 
