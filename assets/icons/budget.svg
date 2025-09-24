@@ -1,0 +1,18 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="12" width="28" height="24" rx="2" stroke="#2563EB" stroke-width="2" fill="none"/>
+  <rect x="12" y="16" width="8" height="4" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <rect x="22" y="16" width="8" height="4" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <rect x="32" y="16" width="4" height="4" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <rect x="12" y="22" width="8" height="4" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <rect x="22" y="22" width="8" height="4" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <rect x="32" y="22" width="4" height="4" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <rect x="12" y="28" width="8" height="4" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <rect x="22" y="28" width="8" height="4" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <rect x="32" y="28" width="4" height="4" rx="1" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <!-- Dollar sign -->
+  <text x="24" y="18" text-anchor="middle" font-family="Arial" font-size="8" fill="#2563EB" font-weight="bold">$</text>
+  <!-- Chart bars -->
+  <rect x="38" y="26" width="2" height="6" fill="#2563EB"/>
+  <rect x="41" y="24" width="2" height="8" fill="#2563EB"/>
+  <rect x="44" y="22" width="2" height="10" fill="#2563EB"/>
+</svg> 
