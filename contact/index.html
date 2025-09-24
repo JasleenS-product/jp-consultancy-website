@@ -401,7 +401,7 @@
   </div>
   <div class="contact-form-section">
     <h2>Send Us a Message</h2>
-    <form class="contact-form" name="contact" method="POST" action="/contact-handler.php">
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-redirect="/thank-you/" netlify-honeypot="bot-field">
       <!-- Hidden honeypot field for spam protection -->
       <p style="display: none;">
         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
